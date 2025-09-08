@@ -1,14 +1,9 @@
 # morse500-v2
 
-## MathVista Dataset Idea Generator
-
-This project contains a script that loads the MathVista dataset from Hugging Face and generates prompts for Gemini 2.5 Pro to suggest ideas for making math problems more challenging.
-
 ### Files
 
 - `idea_generator.py`: Main script that loads the dataset and generates prompts
 - `requirements.txt`: Python dependencies (requires `datasets` library)
-- `test_idea_generator.py`: Unit tests for the script
 
 ### Installation
 
