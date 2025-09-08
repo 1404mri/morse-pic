@@ -1,0 +1,37 @@
+You are an expert math educator. I'm working on creating more challenging versions of math problems for advanced students. Here are some example problems:
+
+Example 1:
+<img>
+Question: What is the age gap between these two people in image?
+Answer: 8
+Grade Level: daily life
+Question Type: free_form
+
+Example 2:
+<img>
+Question: What is the age gap between these two people in image?
+Answer: 4
+Grade Level: daily life
+Question Type: free_form
+
+Example 3:
+<img>
+Question: 如图，在ABCD中，AB＝5，AD＝7，则ABCD的周长为（）
+Answer: 24
+Grade Level: high school
+Question Type: multi_choice
+
+Please provide ideas for making these problems more challenging. Consider:
+    - Adding multi-step reasoning
+
+    - Incorporating additional mathematical concepts
+
+    - Increasing abstraction or complexity
+
+    - Requiring deeper conceptual understanding
+
+    - Introducing real-world applications
+
+
+For each example, suggest 2-3 specific ways to increase the difficulty while maintaining the core mathematical concept.
+    
