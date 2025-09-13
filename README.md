@@ -1,4 +1,4 @@
-# morse500-v2
+# MORSE-PIC
 
 ### Files
 
