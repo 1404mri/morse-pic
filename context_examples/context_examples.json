@@ -1,0 +1,32 @@
+[
+	{
+		"Question": "How many bricks are missing in the wall?",
+	       	"Image Path": "images/bricks.png",	
+		"Image Description": "A drawing of a brick wall with a large, empty gap in the center. The perspective of the gap creates a visual illusion of a staircase.", 
+		"Solution": 6, 
+		"Difficulty Control": "The difficulty is directly controlled by the number of missing bricks. To make it harder, increase the number of items. To make it easier, decrease the number."
+	}, 
+
+	{
+		"Question": "If the cube in the figure is submerged fully into a bucket of paint, how many of the unit cubes in this cube will have 3, 2, 1, and 0 faces covered?",
+	       	"Image Path": "images/cube3x3.png",	
+		"Image Description": "An image of a white 3x3 cube made up of smaller 1x1 cubes sitting on a smooth, glassy surface.", 
+		"Solution": 6, 
+		"Difficulty Control": "The difficulty is directly controlled by the length, width, and height dimensions. To make it harder, increase any of these dimensions. To make it easier, decrease any of these dimensions."
+	}, 
+	{
+		"Question": "A square of area 2 is inscribed in a square of area 3, creating four congruent triangles. What is the ratio of the shorter leg to the longer leg in the shaded right triangle?",
+	       	"Image Path": "images/AMC2023_12A_Problem9.png",	
+		"Image Description": "Figure of a square of area 2 inscribed in a square of area 3, forming four inscribed congruent right triangles", 
+		"Solution": 0.26794919243, 
+		"Difficulty Control": "The difficulty can be controlled by the areas of the inner and outer squares. To make the problem easier, change the areas of the inner and outer squares such that the ratio is a simple, common fraction. To make it harder, change the areas of the inner and outer squares such that the ratio is an irrational decimal number."
+	}, 
+	{
+		"Question": "On triangle ABC, points A, D, E, and B lie in that order on side AB with AD = 4, DE = 16, and EB = 8. Points A, F, G, and C lie in that order on side AC with AF = 13, FG = 52, and GC = 26. Let M be the reflection of D through F, and let N be the reflection of G through E. Quadrilateral DEGF has area 288. Find the area of heptagon AFNBCEM.",
+	       	"Image Path": "images/AIMEI2025_Problem2.png",	
+		"Image Description": "Figure of triangle ABC and heptagon AFNBCEM.", 
+		"Solution": 588, 
+		"Difficulty Control": "The difficulty can be controlled by the area of DEGF, the ratio between the lengths of sides AG and AF, and the ratio between the lengths of sides AC and AG. To make the problem easier, change these parameters so that the area of the triangle, ABC, is a commonly known integer. To make the problem harder, change these parameters so that the area is an irrational decimal or an uncommon improper fraction." 
+	}
+
+]
