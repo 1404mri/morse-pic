@@ -318,10 +318,6 @@ The system includes automatic retry mechanisms:
 3. Add tests for new functionality
 4. Submit a pull request
 
-## 📄 License
-
-MIT License - see LICENSE file for details
-
 ## 🙋‍♀️ Support
 
 - Create an issue on GitHub for bugs
