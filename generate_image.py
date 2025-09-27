@@ -129,7 +129,7 @@ class CodeGeneration(dspy.Signature):
     
     question_analysis = dspy.InputField(desc="Analysis of the original question and adaptation requirements")
     mathematical_concepts = dspy.InputField(desc="Key mathematical concepts to implement in the visualization")
-    recommended_libraries = dspy.InputField(desc="Specific libraries to use")
+    recommended_libraries = dspy.InputField(desc="Specific libraries to use. Use the library that can best create the visualization")
     difficulty_parameters = dspy.InputField(desc="Complexity parameters including num_data_points, decimal_places, visual_elements")
     image_context = dspy.InputField(desc="Type of visualization (bar_chart, function_plot, geometry_diagram, scatter_plot, etc.)")
     initial_question = dspy.InputField(desc="Original mathematical question to base the visualization on")
