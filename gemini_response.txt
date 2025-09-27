@@ -1,0 +1,4 @@
+**Problem 1**
+Difficulty Control: The difficulty is primarily controlled by the physical complexity of the system described.
+*   **To make it easier:** Keep the system as presented (horizontal and frictionless). The arithmetic difficulty can be reduced by choosing values for mass (`m`), velocity (`v`), and the spring constant (`k`) that result in a simple integer answer for the compression distance (`d`).
+*   **To make it harder:** Introduce additional forces. For example, adding a coefficient of kinetic friction to the surface. This changes the problem from a simple conservation of energy equation to a work-energy theorem problem, which requires solving a quadratic equation to find the compression distance. Another way to increase difficulty is to place the system on an inclined plane, which introduces the component of gravitational force and also leads to a more complex equation.
