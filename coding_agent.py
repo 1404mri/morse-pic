@@ -373,12 +373,34 @@ class CodeExecutor:
 class MathVistaSystem:
     """Main system orchestrating the VLM-based generation pipeline"""
     
-    def __init__(self, model_name: str = "gpt-3.5-turbo"):
+    def __init__(self, model_name: str = "gpt-3.5-turbo", seed: Optional[int] = None):
         """Initialize the system with DSPy configuration"""
         
-        # Configure DSPy with the specified model
+        self.seed = seed
+        
+        # Set seed for reproducibility where possible
+        if seed is not None:
+            import random
+            import numpy as np
+            random.seed(seed)
+            if 'numpy' in sys.modules or 'np' in globals():
+                np.random.seed(seed)
+        
+        # Configure DSPy with the specified model and seed
         # This would be configured based on whether using Ollama or Gemini
-        dspy.settings.configure(lm=dspy.OpenAI(model=model_name))
+        lm_config = {"model": model_name}
+        if seed is not None:
+            # Try to set seed/temperature for reproducibility
+            lm_config.update({
+                "temperature": 0.0,  # Lower temperature for more deterministic responses
+                "seed": seed  # Some models support seed parameter
+            })
+        
+        try:
+            dspy.settings.configure(lm=dspy.OpenAI(**lm_config))
+        except TypeError:
+            # Fallback if seed parameter not supported
+            dspy.settings.configure(lm=dspy.OpenAI(model=model_name, temperature=0.0))
         
         # Initialize agents
         self.coding_agent = CodingAgent()
@@ -392,18 +414,60 @@ class MathVistaSystem:
         """Configure DSPy to use Ollama models"""
         try:
             import ollama
-            # Configure DSPy for Ollama
-            dspy.settings.configure(lm=dspy.OllamaLocal(model=model, base_url=base_url))
+            # Configure DSPy for Ollama with reproducibility settings
+            lm_config = {
+                "model": model, 
+                "base_url": base_url,
+                "temperature": 0.0  # Set temperature to 0 for reproducibility
+            }
+            if self.seed is not None:
+                lm_config["seed"] = self.seed
+            
+            dspy.settings.configure(lm=dspy.OllamaLocal(**lm_config))
         except ImportError:
             print("Ollama not available. Install with: pip install ollama")
+        except TypeError:
+            # Fallback if some parameters not supported
+            dspy.settings.configure(lm=dspy.OllamaLocal(model=model, base_url=base_url))
     
     def configure_for_gemini(self, api_key: str, model: str = "gemini-pro"):
         """Configure DSPy to use Gemini models"""
         try:
-            # Configure DSPy for Gemini
-            dspy.settings.configure(lm=dspy.Gemini(model=model, api_key=api_key))
+            # Configure DSPy for Gemini with reproducibility settings
+            lm_config = {
+                "model": model, 
+                "api_key": api_key,
+                "temperature": 0.0  # Set temperature to 0 for reproducibility
+            }
+            if self.seed is not None:
+                # Note: Gemini may not support seed parameter directly
+                # but temperature=0 helps with reproducibility
+                pass
+            
+            dspy.settings.configure(lm=dspy.Gemini(**lm_config))
         except Exception as e:
             print(f"Gemini configuration failed: {e}")
+    
+    def set_reproducible_mode(self, seed: int):
+        """Enable reproducible mode with given seed"""
+        import random
+        import numpy as np
+        
+        self.seed = seed
+        random.seed(seed)
+        
+        try:
+            np.random.seed(seed)
+        except:
+            pass
+        
+        # Update DSPy configuration for reproducibility
+        current_lm = dspy.settings.lm
+        if hasattr(current_lm, 'kwargs'):
+            current_lm.kwargs.update({
+                'temperature': 0.0,
+                'seed': seed
+            })
     
     def generate(self, generation_input: GenerationInput, 
                 output_filename: Optional[str] = None) -> GenerationOutput:
@@ -563,59 +627,6 @@ class MathVistaSystem:
         return quality_scores
 
 
-# Utility functions for common mathematical operations
-class MathUtilities:
-    """Utility functions for mathematical calculations and validations"""
-    
-    @staticmethod
-    def validate_triangle(a: float, b: float, c: float) -> bool:
-        """Validate if three sides can form a triangle"""
-        return a + b > c and b + c > a and a + c > b
-    
-    @staticmethod
-    def generate_fibonacci_sequence(n: int) -> List[int]:
-        """Generate Fibonacci sequence of length n"""
-        if n <= 0:
-            return []
-        elif n == 1:
-            return [0]
-        elif n == 2:
-            return [0, 1]
-        
-        fib = [0, 1]
-        for i in range(2, n):
-            fib.append(fib[i-1] + fib[i-2])
-        return fib
-    
-    @staticmethod
-    def calculate_basic_statistics(data: List[float]) -> Dict[str, float]:
-        """Calculate basic statistical measures without external dependencies"""
-        if not data:
-            return {}
-            
-        n = len(data)
-        sorted_data = sorted(data)
-        
-        # Basic calculations
-        mean = sum(data) / n
-        median = sorted_data[n//2] if n % 2 == 1 else (sorted_data[n//2-1] + sorted_data[n//2]) / 2
-        
-        # Variance and standard deviation
-        variance = sum((x - mean) ** 2 for x in data) / n
-        std = variance ** 0.5
-        
-        return {
-            'mean': round(mean, 4),
-            'median': round(median, 4),
-            'std': round(std, 4),
-            'variance': round(variance, 4),
-            'min': min(data),
-            'max': max(data),
-            'range': max(data) - min(data),
-            'count': n
-        }
-
-
 # Export main classes and functions
 __all__ = [
     'MathVistaSystem',
@@ -626,18 +637,17 @@ __all__ = [
     'ImageContext',
     'LibrarySelector',
     'DifficultyController',
-    'CodeExecutor',
-    'MathUtilities'
+    'CodeExecutor'
 ]
 
 
 if __name__ == "__main__":
     # Example usage with VLM-based code generation
-    system = MathVistaSystem()
+    system = MathVistaSystem(seed=42)  # Set seed for reproducibility
     
     # Configure for different models
     # system.configure_for_ollama(model="codellama")  # For Ollama
-    # system.configure_for_gemini(api_key="your-api-key")  # For Gemini
+    system.configure_for_gemini(api_key="your-api-key")  # For Gemini
     
     # Example input
     input_data = GenerationInput(
