@@ -1,0 +1,17 @@
+{
+  "adapted_question": "In the generated 3D scene, what is the absolute difference between the number of 'red spheres' and the number of 'blue cubes'?",
+  "recommended_libraries": [
+    "blender",
+    "pyvista",
+    "trimesh"
+  ],
+  "difficulty_params": {
+    "num_data_points": 25,
+    "decimal_places": 3,
+    "num_categories": 6,
+    "calculation_steps": 3,
+    "visual_elements": 6,
+    "complexity_level": "intermediate"
+  },
+  "image_context": "synthetic scene"
+}
