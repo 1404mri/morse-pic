@@ -6,16 +6,30 @@ all necessary components are defined inline here.
 
 import os
 import json
+import base64
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+import io
 import re
 import dspy
 import dotenv
+from PIL import Image
 
 
 dotenv.load_dotenv()
+
+
+def encode_image_to_base64(image_path: str) -> str:
+    """Load an image using PIL and return a base64 data URI."""
+    with Image.open(image_path) as img:
+        buffer = io.BytesIO()
+        format_hint = (img.format or "PNG").lower()
+        img.save(buffer, format=format_hint.upper())
+        encoded = base64.b64encode(buffer.getvalue()).decode("utf-8")
+        return f"data:image/{format_hint};base64,{encoded}"
+
 
 def extract_python_code(generated_code: str) -> str:
     """Extract the Python code block from the generated code string."""
@@ -47,12 +61,13 @@ class ImageContext(Enum):
 
 @dataclass
 class GenerationInput:
-	initial_question: str
-	reference_image_path: Optional[str]
-	image_description: str
-	difficulty_control: str
-	difficulty_level: int
-	image_context: str
+    initial_question: str
+    reference_image_path: Optional[str]
+    image_description: str
+    difficulty_control: str
+    difficulty_level: int
+    image_context: str
+    image_data: Optional[str] = None
 
 
 class LibrarySelector:
@@ -118,6 +133,7 @@ class QuestionAnalysis(dspy.Signature):
     difficulty_control = dspy.InputField()
     difficulty_level = dspy.InputField()
     image_context = dspy.InputField()
+    image_reference = dspy.InputField(desc="Base64 encoded reference image data, prefixed as a data URI")
     
     analysis_result = dspy.OutputField(desc="Detailed analysis of question requirements and adaptation strategy")
     mathematical_concepts = dspy.OutputField(desc="Key mathematical concepts identified in the question")
@@ -134,6 +150,7 @@ class CodeGeneration(dspy.Signature):
     image_context = dspy.InputField(desc="Type of visualization (bar_chart, function_plot, geometry_diagram, scatter_plot, etc.)")
     initial_question = dspy.InputField(desc="Original mathematical question to base the visualization on")
     difficulty_control = dspy.InputField(desc="Instructions for modifying difficulty level")
+    image_reference = dspy.InputField(desc="Base64 encoded reference image data, prefixed as a data URI")
     
     generated_code = dspy.OutputField(desc="Complete executable Python code that: 1) Imports required libraries, 2) Generates/creates data programmatically, 3) Creates the visualization, 4) Calculates ground truth mathematically (not using AI), 5) Saves image to output_path, 6) Sets final_image_path=output_path, 7) Sets ground_truth as dictionary with calculated values")
     adapted_question = dspy.OutputField(desc="Mathematical question adapted to match the generated visualization and target difficulty level")
@@ -160,12 +177,21 @@ class CodingAgent(dspy.Module):
     def forward(self, generation_input: GenerationInput) -> Dict[str, Any]:
         """Forward pass of the coding agent using DSPy signatures for code generation"""
         
+        image_reference = generation_input.image_data or ""
+        if generation_input.reference_image_path and not image_reference:
+            try:
+                image_reference = encode_image_to_base64(generation_input.reference_image_path)
+                generation_input.image_data = image_reference
+            except Exception as exc:
+                print(f"⚠️ Failed to load reference image '{generation_input.reference_image_path}': {exc}")
+	
         # Step 1: Analyze the question
         analysis = self.question_analyzer(
             initial_question=generation_input.initial_question,
             difficulty_control=generation_input.difficulty_control,
             difficulty_level=str(generation_input.difficulty_level),
-            image_context=generation_input.image_context
+            image_context=generation_input.image_context,
+            image_reference=image_reference
         )
         
         # Step 2: Select appropriate libraries
@@ -182,14 +208,16 @@ class CodingAgent(dspy.Module):
             difficulty_parameters=str(difficulty_params),
             image_context=generation_input.image_context,
             initial_question=generation_input.initial_question,
-            difficulty_control=generation_input.difficulty_control
+            difficulty_control=generation_input.difficulty_control,
+            image_reference=image_reference
         )
         
         return {
             "analysis": analysis,
             "code_result": code_result,
             "recommended_libraries": recommended_libraries,
-            "difficulty_params": difficulty_params
+            "difficulty_params": difficulty_params,
+            "image_reference": image_reference
         }
 
 
@@ -280,7 +308,8 @@ def main() -> None:
 		"adapted_question": code_result.adapted_question,
 		"recommended_libraries": result["recommended_libraries"],
 		"difficulty_params": result["difficulty_params"],
-		"image_context": generation_input.image_context,
+        "image_context": generation_input.image_context,
+        "image_reference": result["image_reference"],
 	}
 	print("🧠 Adapted question:", code_result.adapted_question)
 	print("🧾 Code explanation:", code_result.code_explanation)
