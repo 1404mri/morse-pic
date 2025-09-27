@@ -67,7 +67,7 @@ class GenerationInput:
     difficulty_control: str
     difficulty_level: int
     image_context: str
-    image_data: Optional[bytes] = None
+    image_data: Optional[str] = None
 
 
 class LibrarySelector:
