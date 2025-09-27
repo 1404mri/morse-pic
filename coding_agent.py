@@ -24,20 +24,20 @@ warnings.filterwarnings('ignore')
 
 class ImageContext(Enum):
     """Enumeration of supported image contexts"""
-    ABSTRACT_SCENE = "abstract_scene"
-    BAR_CHART = "bar_chart"
-    DOCUMENT_IMAGE = "document_image"
-    FUNCTION_PLOT = "function_plot"
-    GEOMETRY_DIAGRAM = "geometry_diagram"
-    LINE_PLOT = "line_plot"
-    MAP_CHART = "map_chart"
-    PIE_CHART = "pie_chart"
-    PUZZLE_TEST = "puzzle_test"
-    SCATTER_PLOT = "scatter_plot"
-    SCIENTIFIC_FIGURE = "scientific_figure"
-    SYNTHETIC_SCENE = "synthetic_scene"
+    ABSTRACT_SCENE = "abstract scene"
+    BAR_CHART = "bar chart"
+    DOCUMENT_IMAGE = "document image"
+    FUNCTION_PLOT = "function plot"
+    GEOMETRY_DIAGRAM = "geometry diagram"
+    LINE_PLOT = "line plot"
+    MAP_CHART = "map chart"
+    PIE_CHART = "pie chart"
+    PUZZLE_TEST = "puzzle test"
+    SCATTER_PLOT = "scatter plot"
+    SCIENTIFIC_FIGURE = "scientific figure"
+    SYNTHETIC_SCENE = "synthetic scene"
     TABLE = "table"
-    VIOLIN_PLOT = "violin_plot"
+    VIOLIN_PLOT = "violin plot"
 
 
 @dataclass
@@ -176,10 +176,17 @@ class MathematicalAccuracy(dspy.Signature):
 class CodingAgent(dspy.Module):
     """Main coding agent module for generating mathematical visualizations via DSPy signatures"""
     
-    def __init__(self):
+    def __init__(self, enable_thinking: bool = True):
         super().__init__()
-        self.question_analyzer = dspy.ChainOfThought(QuestionAnalysis)
-        self.code_generator = dspy.ChainOfThought(CodeGeneration)
+        # Use ChainOfThought only if thinking is enabled (not for thinking models)
+        if enable_thinking:
+            self.question_analyzer = dspy.ChainOfThought(QuestionAnalysis)
+            self.code_generator = dspy.ChainOfThought(CodeGeneration)
+        else:
+            # For thinking models, use direct signatures without ChainOfThought wrapper
+            self.question_analyzer = dspy.Predict(QuestionAnalysis)
+            self.code_generator = dspy.Predict(CodeGeneration)
+        
         self.library_selector = LibrarySelector()
         self.difficulty_controller = DifficultyController()
     
@@ -222,10 +229,16 @@ class CodingAgent(dspy.Module):
 class VerifierAgent(dspy.Module):
     """Verifier agent module for validating VLM-generated content"""
     
-    def __init__(self):
+    def __init__(self, enable_thinking: bool = True):
         super().__init__()
-        self.code_verifier = dspy.ChainOfThought(CodeVerification)
-        self.math_verifier = dspy.ChainOfThought(MathematicalAccuracy)
+        # Use ChainOfThought only if thinking is enabled (not for thinking models)
+        if enable_thinking:
+            self.code_verifier = dspy.ChainOfThought(CodeVerification)
+            self.math_verifier = dspy.ChainOfThought(MathematicalAccuracy)
+        else:
+            # For thinking models, use direct signatures without ChainOfThought wrapper
+            self.code_verifier = dspy.Predict(CodeVerification)
+            self.math_verifier = dspy.Predict(MathematicalAccuracy)
     
     def forward(self, generated_code: str, adapted_question: str, code_explanation: str) -> Dict[str, Any]:
         """Forward pass of the verifier agent for VLM-generated code"""
@@ -251,10 +264,22 @@ class VerifierAgent(dspy.Module):
             "code_verification": code_verification,
             "math_verification": math_verification,
             "syntax_valid": syntax_valid,
-            "overall_validity": (code_verification.is_valid and 
-                               math_verification.mathematical_validity and 
-                               syntax_valid)
+            "overall_validity": (
+                # Handle boolean conversion for DSPy output fields
+                self._to_bool(code_verification.is_valid) and 
+                self._to_bool(math_verification.mathematical_validity) and 
+                syntax_valid
+            )
         }
+    
+    def _to_bool(self, value) -> bool:
+        """Convert DSPy output field to boolean"""
+        if isinstance(value, bool):
+            return value
+        elif isinstance(value, str):
+            return value.lower() in ['true', 'yes', '1', 'valid', 'correct']
+        else:
+            return bool(value)
     
     def _check_syntax(self, code: str) -> bool:
         """Basic syntax check for generated code"""
@@ -372,10 +397,43 @@ class CodeExecutor:
             return False, error_msg, None
 
 
+def setup_model(model_type: str = "ollama", model_name: str = "qwen3:8b") -> bool:
+    """Setup DSPy language model configuration
+    
+    Returns:
+        bool: True if DSPy thinking should be enabled, False if disabled (for thinking models)
+    """
+    api_key = os.getenv('GEMINI_API_KEY', 'GEMINI_API_KEY')
+    # Models that have built-in thinking capabilities and should use think=False
+    thinking_models = ['qwen', 'qwen2', 'qwen3', 'deepseek', 'o1']
+    
+    if model_type.lower() == "ollama":
+        lm = dspy.LM(f'ollama_chat/{model_name}', api_base='http://localhost:11434', api_key='', max_tokens=32000)
+        print(f"✓ Configured Ollama model ({model_name})")
+        
+        # Check if this is a thinking model
+        has_built_in_thinking = any(thinking_model in model_name.lower() for thinking_model in thinking_models)
+        if has_built_in_thinking:
+            print(f"🧠 Detected thinking model - will disable internal thinking mode and replace with DSPy chain of thought")
+        
+    elif model_type.lower() == "gemini":
+        if not api_key:
+            api_key = os.getenv('GEMINI_API_KEY', 'GEMINI_API_KEY')
+        lm = dspy.LM(f'gemini/{model_name}', api_key=api_key, max_tokens=32000)
+        print(f"✓ Configured Gemini model ({model_name})")
+        has_built_in_thinking = False  # Gemini doesn't have built-in thinking mode
+        
+    else:
+        raise ValueError(f"Unsupported model type: {model_type}. Use 'ollama' or 'gemini'")
+    
+    dspy.configure(lm=lm)
+    return not has_built_in_thinking  # Return False for thinking models (disable DSPy thinking)
+
+
 class MathVistaSystem:
     """Main system orchestrating the VLM-based generation pipeline"""
     
-    def __init__(self, model_name: str = "gpt-3.5-turbo", seed: Optional[int] = None):
+    def __init__(self, model_type: str = "ollama", model_name: str = "qwen3:8b", seed: Optional[int] = None):
         """Initialize the system with DSPy configuration"""
         
         self.seed = seed
@@ -388,67 +446,18 @@ class MathVistaSystem:
             if 'numpy' in sys.modules or 'np' in globals():
                 np.random.seed(seed)
         
-        # Configure DSPy with the specified model and seed
-        # This would be configured based on whether using Ollama or Gemini
-        lm_config = {"model": model_name}
-        if seed is not None:
-            # Try to set seed/temperature for reproducibility
-            lm_config.update({
-                "temperature": 0.0,  # Lower temperature for more deterministic responses
-                "seed": seed  # Some models support seed parameter
-            })
+        # Use the modern DSPy setup
+        self.enable_thinking = setup_model(model_type, model_name)
         
-        try:
-            dspy.settings.configure(lm=dspy.OpenAI(**lm_config))
-        except TypeError:
-            # Fallback if seed parameter not supported
-            dspy.settings.configure(lm=dspy.OpenAI(model=model_name, temperature=0.0))
-        
-        # Initialize agents
-        self.coding_agent = CodingAgent()
-        self.verifier_agent = VerifierAgent()
+        # Initialize agents with thinking configuration
+        self.coding_agent = CodingAgent(enable_thinking=self.enable_thinking)
+        self.verifier_agent = VerifierAgent(enable_thinking=self.enable_thinking)
         self.code_executor = CodeExecutor()
         
         # Initialize optimization if needed
         self.optimizer = None
     
-    def configure_for_ollama(self, base_url: str = "http://localhost:11434", model: str = "llama2"):
-        """Configure DSPy to use Ollama models"""
-        try:
-            import ollama
-            # Configure DSPy for Ollama with reproducibility settings
-            lm_config = {
-                "model": model, 
-                "base_url": base_url,
-                "temperature": 0.0  # Set temperature to 0 for reproducibility
-            }
-            if self.seed is not None:
-                lm_config["seed"] = self.seed
-            
-            dspy.settings.configure(lm=dspy.OllamaLocal(**lm_config))
-        except ImportError:
-            print("Ollama not available. Install with: pip install ollama")
-        except TypeError:
-            # Fallback if some parameters not supported
-            dspy.settings.configure(lm=dspy.OllamaLocal(model=model, base_url=base_url))
-    
-    def configure_for_gemini(self, api_key: str, model: str = "gemini-pro"):
-        """Configure DSPy to use Gemini models"""
-        try:
-            # Configure DSPy for Gemini with reproducibility settings
-            lm_config = {
-                "model": model, 
-                "api_key": api_key,
-                "temperature": 0.0  # Set temperature to 0 for reproducibility
-            }
-            if self.seed is not None:
-                # Note: Gemini may not support seed parameter directly
-                # but temperature=0 helps with reproducibility
-                pass
-            
-            dspy.settings.configure(lm=dspy.Gemini(**lm_config))
-        except Exception as e:
-            print(f"Gemini configuration failed: {e}")
+    # Remove the old configuration methods since we use setup_model now
     
     def set_reproducible_mode(self, seed: int):
         """Enable reproducible mode with given seed"""
@@ -463,80 +472,84 @@ class MathVistaSystem:
         except:
             pass
         
-        # Update DSPy configuration for reproducibility
-        current_lm = dspy.settings.lm
-        if hasattr(current_lm, 'kwargs'):
-            current_lm.kwargs.update({
-                'temperature': 0.0,
-                'seed': seed
-            })
+        # Note: Modern DSPy doesn't use dspy.settings for runtime configuration
+        print(f"🎲 Set seed to {seed} for reproducible generation")
     
     def generate(self, generation_input: GenerationInput, 
                 output_filename: Optional[str] = None) -> GenerationOutput:
         """Generate a complete mathematical visualization with question and answer using VLM"""
         
         if output_filename is None:
-            output_filename = f"generated_{generation_input.image_context}_{generation_input.difficulty_level}.png"
+            output_filename = f"generated_{generation_input.image_context.replace(' ', '_')}_{generation_input.difficulty_level}.png"
         
-        # Step 1: Run coding agent (which now uses VLM for code generation)
-        coding_result = self.coding_agent(generation_input)
-        
-        # Step 2: Run verifier agent
-        verification_result = self.verifier_agent(
-            coding_result["code_result"].generated_code,
-            coding_result["code_result"].adapted_question,
-            coding_result["code_result"].code_explanation
-        )
-        
-        # Step 3: If verification fails, try to fix the code or regenerate
-        max_retries = 3
-        retry_count = 0
-        
-        while not verification_result["overall_validity"] and retry_count < max_retries:
-            print(f"Code verification failed. Retrying... ({retry_count + 1}/{max_retries})")
-            
-            # Re-generate code with feedback
+        try:
+            # Step 1: Run coding agent (which now uses VLM for code generation)
+            print("🔄 Analyzing question and generating code...")
             coding_result = self.coding_agent(generation_input)
+            
+            # Step 2: Run verifier agent
+            print("✅ Code generated, running verification...")
             verification_result = self.verifier_agent(
                 coding_result["code_result"].generated_code,
                 coding_result["code_result"].adapted_question,
                 coding_result["code_result"].code_explanation
             )
-            retry_count += 1
-        
-        # Step 4: Execute code if verification passes
-        if verification_result["overall_validity"]:
-            # Try to install required libraries
-            self.code_executor.install_required_packages(coding_result["recommended_libraries"])
             
-            success, result, ground_truth = self.code_executor.execute_code(
-                coding_result["code_result"].generated_code,
-                output_filename
-            )
+            # Step 3: If verification fails, try to fix the code or regenerate
+            max_retries = 3
+            retry_count = 0
             
-            if success:
-                # Create final output
-                output = GenerationOutput(
-                    question=coding_result["code_result"].adapted_question,
-                    image_path=result,
-                    ground_truth=str(ground_truth) if ground_truth else "Ground truth calculation failed",
-                    metadata={
-                        "difficulty_level": generation_input.difficulty_level,
-                        "image_context": generation_input.image_context,
-                        "recommended_libraries": coding_result["recommended_libraries"],
-                        "difficulty_params": coding_result["difficulty_params"],
-                        "verification_result": verification_result,
-                        "code_explanation": coding_result["code_result"].code_explanation,
-                        "retry_count": retry_count
-                    },
-                    generated_code=coding_result["code_result"].generated_code
+            while not verification_result["overall_validity"] and retry_count < max_retries:
+                print(f"⚠️ Code verification failed. Retrying... ({retry_count + 1}/{max_retries})")
+                
+                # Re-generate code with feedback
+                coding_result = self.coding_agent(generation_input)
+                verification_result = self.verifier_agent(
+                    coding_result["code_result"].generated_code,
+                    coding_result["code_result"].adapted_question,
+                    coding_result["code_result"].code_explanation
+                )
+                retry_count += 1
+            
+            # Step 4: Execute code if verification passes
+            if verification_result["overall_validity"]:
+                print("✅ Verification passed, executing code...")
+                # Try to install required libraries
+                self.code_executor.install_required_packages(coding_result["recommended_libraries"])
+                
+                success, result, ground_truth = self.code_executor.execute_code(
+                    coding_result["code_result"].generated_code,
+                    output_filename
                 )
                 
-                return output
+                if success:
+                    print(f"🎉 Successfully generated visualization: {result}")
+                    # Create final output
+                    output = GenerationOutput(
+                        question=coding_result["code_result"].adapted_question,
+                        image_path=result,
+                        ground_truth=str(ground_truth) if ground_truth else "Ground truth calculation failed",
+                        metadata={
+                            "difficulty_level": generation_input.difficulty_level,
+                            "image_context": generation_input.image_context,
+                            "recommended_libraries": coding_result["recommended_libraries"],
+                            "difficulty_params": coding_result["difficulty_params"],
+                            "verification_result": verification_result,
+                            "code_explanation": coding_result["code_result"].code_explanation,
+                            "retry_count": retry_count
+                        },
+                        generated_code=coding_result["code_result"].generated_code
+                    )
+                    
+                    return output
+                else:
+                    raise RuntimeError(f"Code execution failed: {result}")
             else:
-                raise RuntimeError(f"Code execution failed: {result}")
-        else:
-            raise ValueError("Generated code failed verification after maximum retries")
+                raise ValueError("Generated code failed verification after maximum retries")
+                
+        except Exception as e:
+            print(f"❌ Generation error: {str(e)}")
+            raise
     
     def optimize_pipeline(self, training_examples: List[Tuple[GenerationInput, GenerationOutput]]):
         """Optimize the DSPy pipeline using training examples"""
@@ -644,23 +657,24 @@ __all__ = [
 
 
 if __name__ == "__main__":
-    # Example usage with VLM-based code generation
-    system = MathVistaSystem(seed=42)  # Set seed for reproducibility
-    api_key = os.getenv("GOOGLE_API_KEY")
-    if not api_key:
-        raise ValueError("Please set the GOOGLE_API_KEY environment variable for Gemini access.")
-    # Configure for different models
-    # system.configure_for_ollama(model="codellama")  # For Ollama
-    system.configure_for_gemini(api_key=api_key)  # For Gemini
-
+    # Example usage with VLM-based code generation using modern DSPy setup
+    system = MathVistaSystem(model_type="gemini", model_name="gemini-2.5-flash", seed=42)
+    
     # Example input
     input_data = GenerationInput(
-        initial_question="What is the area of the triangle?",
-        reference_image_path=None,
-        image_description="A right triangle with sides 3, 4, and 5",
-        difficulty_control="Make the calculation more complex by adding angle measurements and multiple triangles",
+        initial_question="Is the number of tiny gray bicycles that are on the left side of the brown metal sedan greater than the number of things that are to the left of the tiny green bicycle?",
+        reference_image_path="img/image_1.png",
+        image_description="""The image is a 3D rendering of several vehicles on a plain, light-colored surface. The lighting is from the upper left, casting subtle shadows. The vehicles are: 
+        A metallic red motorcycle: Highly stylized with a streamlined, almost futuristic design. It has intricate, chrome-like details, and a light-blue or cyan seat and wheel rims. It is positioned near the center-left of the image.
+        A metallic gold sedan: A large, four-door car with a sleek, reflective gold finish. It's positioned on the right side of the image, facing slightly left.
+        A small, pink sedan: A small, simple-looking car with a pink body and a light-blue roof. It's located behind the red motorcycle and the green bicycle.
+        A green bicycle: A classic-style bicycle with a bright green frame and a thin, turquoise saddle and wheels. It is situated to the left of the gray dirt bike.
+        A gray dirt bike: A large, uncolored or matte gray dirt bike with a green front fender and blue wheels. It's the largest vehicle in the group and is positioned in the center of the image.
+        Two joined bicycles: A unique, low-profile vehicle consisting of two bicycle-like frames joined together side-by-side, lying on the ground. One side is blue and the other is a metallic orange or bronze color. This vehicle is in the foreground, at the bottom of the image.
+        The overall scene has a somewhat surreal or artistic feel due to the mix of vehicle styles and the varied, often reflective, materials.""",
+        difficulty_control="""To adjust the difficulty for a question about this image, consider manipulating the context and relationships between the objects. For instance, to increase the difficulty, you could introduce a narrative or a physical interaction: "Imagine these vehicles are part of a race, and the two joined bicycles are obstacles. The red motorcycle needs to choose the shortest path around them to reach the finish line, which is marked by the golden car. Calculate the minimal distance if each unit represents one meter, and the vehicles are currently at specific 3D coordinates (which you would then provide). What is the total length of the path?" This adds a layer of spatial reasoning, measurement, and problem-solving. Conversely, to decrease the difficulty, you could simplify by focusing on a single, easily identifiable attribute of one object: "What color is the large car on the right?" or "How many wheels does the green vehicle have?" This directs attention to immediate visual recognition without requiring complex interpretation.""",
         difficulty_level=3,
-        image_context="geometry_diagram"
+        image_context="synthetic scene"
     )
     
     # Generate output using VLM
@@ -678,33 +692,33 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Generation failed: {str(e)}")
         
-    # Example batch generation
-    batch_inputs = [
-        GenerationInput(
-            initial_question="What is the correlation between X and Y?",
-            reference_image_path=None,
-            image_description="Scatter plot showing positive correlation",
-            difficulty_control="Add multiple regression lines and statistical measures",
-            difficulty_level=4,
-            image_context="scatter_plot"
-        ),
-        GenerationInput(
-            initial_question="Which category has the highest value?",
-            reference_image_path=None,
-            image_description="Bar chart with 5 categories",
-            difficulty_control="Add error bars and percentage labels",
-            difficulty_level=2,
-            image_context="bar_chart"
-        )
-    ]
+    # # Example batch generation
+    # batch_inputs = [
+    #     GenerationInput(
+    #         initial_question="What is the correlation between X and Y?",
+    #         reference_image_path=None,
+    #         image_description="Scatter plot showing positive correlation",
+    #         difficulty_control="Add multiple regression lines and statistical measures",
+    #         difficulty_level=4,
+    #         image_context="scatter_plot"
+    #     ),
+    #     GenerationInput(
+    #         initial_question="Which category has the highest value?",
+    #         reference_image_path=None,
+    #         image_description="Bar chart with 5 categories",
+    #         difficulty_control="Add error bars and percentage labels",
+    #         difficulty_level=2,
+    #         image_context="bar_chart"
+    #     )
+    # ]
     
-    try:
-        batch_results = system.batch_generate(batch_inputs)
-        print(f"Successfully generated {len(batch_results)} visualizations")
+    # try:
+    #     batch_results = system.batch_generate(batch_inputs)
+    #     print(f"Successfully generated {len(batch_results)} visualizations")
         
-        for i, result in enumerate(batch_results):
-            quality = system.evaluate_generation_quality(result)
-            print(f"Batch item {i+1} quality score: {quality['overall']:.2f}")
+    #     for i, result in enumerate(batch_results):
+    #         quality = system.evaluate_generation_quality(result)
+    #         print(f"Batch item {i+1} quality score: {quality['overall']:.2f}")
             
     except Exception as e:
         print(f"Batch generation failed: {str(e)}")
