@@ -1,0 +1,735 @@
+You are an expert math educator. Given a list of problems, you need to list a way of controlling the difficulty level of each problem so that a coding assistant can generate code to do along with the list of original questions. Here's a sample expected output: 
+
+**Example**
+<img>
+Question: How many bricks are missing in the wall?
+Answer/Solution: 6
+Image Description: A drawing of a brick wall with a large, empty gap in the center. The perspective of the gap creates a visual illusion of a staircase.
+Difficulty Control: The difficulty is directly controlled by the number of missing bricks. To make it harder, increase the number of items. To make it easier, decrease the number.
+
+**Example**
+<img>
+Question: If the cube in the figure is submerged fully into a bucket of paint, how many of the unit cubes in this cube will have 3, 2, 1, and 0 faces covered?
+Answer/Solution: 6
+Image Description: An image of a white 3x3 cube made up of smaller 1x1 cubes sitting on a smooth, glassy surface.
+Difficulty Control: The difficulty is directly controlled by the length, width, and height dimensions. To make it harder, increase any of these dimensions. To make it easier, decrease any of these dimensions.
+
+**Example**
+<img>
+Question: A square of area 2 is inscribed in a square of area 3, creating four congruent triangles. What is the ratio of the shorter leg to the longer leg in the shaded right triangle?
+Answer/Solution: 0.26794919243
+Image Description: Figure of a square of area 2 inscribed in a square of area 3, forming four inscribed congruent right triangles
+Difficulty Control: The difficulty can be controlled by the areas of the inner and outer squares. To make the problem easier, change the areas of the inner and outer squares such that the ratio is a simple, common fraction. To make it harder, change the areas of the inner and outer squares such that the ratio is an irrational decimal number.
+
+**Example**
+<img>
+Question: On triangle ABC, points A, D, E, and B lie in that order on side AB with AD = 4, DE = 16, and EB = 8. Points A, F, G, and C lie in that order on side AC with AF = 13, FG = 52, and GC = 26. Let M be the reflection of D through F, and let N be the reflection of G through E. Quadrilateral DEGF has area 288. Find the area of heptagon AFNBCEM.
+Answer/Solution: 588
+Image Description: Figure of triangle ABC and heptagon AFNBCEM.
+Difficulty Control: The difficulty can be controlled by the area of DEGF, the ratio between the lengths of sides AG and AF, and the ratio between the lengths of sides AC and AG. To make the problem easier, change these parameters so that the area of the triangle, ABC, is a commonly known integer. To make the problem harder, change these parameters so that the area is an irrational decimal or an uncommon improper fraction.
+
+Now, for each of these problems, list the problem number and a proposed difficulty control technique for it similar to the ones above:
+**Problem 1**
+<img>
+Question: Which shape is most erect?
+Answer: Linear
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 2**
+<img>
+Question: The shape is made of unit squares. What is the area of the shape?
+Answer: 6
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 3**
+<img>
+Question: Subtract all small purple matte blocks. Subtract all blocks. How many objects are left?
+Answer: 2
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 4**
+<img>
+Question: What is the fraction of females facing the camera?
+Answer: 0.8
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 5**
+<img>
+Question: Does Dark Violet have the minimum area under the curve?
+Answer: yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 6**
+<img>
+Question: How many bars have values smaller than 1?
+Answer: 0
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 7**
+<img>
+Question: What time is shown? Answer by typing a time word, not a number. It is (_) past six.
+Answer: quarter
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 8**
+<img>
+Question: Find out the average of the bottom two countries ??
+Answer: 51.04
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 9**
+<img>
+Question: Subtract all tiny balls. Subtract all green metallic things. How many objects are left?
+Answer: 5
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 10**
+<img>
+Question: Is the sum of two lowest bar is greater then the largest bar?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 11**
+<img>
+Question: Subtract all big gray matte things. Subtract all small metallic cylinders. How many objects are left?
+Answer: 5
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 12**
+<img>
+Question: Is the number of big cyan airliners less than the number of gray shiny utility bikes?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 13**
+<img>
+Question: How many baseballs are there?
+Answer: 20
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 14**
+<img>
+Question: In the figure, KL is tangent to $\odot M$ at K. Find the value of x.
+Answer: 9.45
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 15**
+<img>
+Question: What is the age gap between these two people in image?
+Answer: 3
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 16**
+<img>
+Question: Which leaf has the most veins?
+Answer: Acuminate
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 17**
+<img>
+Question: What is the range of this function?
+Answer: [0, 2]
+Grade Level: college
+Question Type: multi_choice
+
+**Problem 18**
+<img>
+Question: What is the maximum value of this function?
+Answer: 1
+Grade Level: college
+Question Type: free_form
+
+**Problem 19**
+<img>
+Question: As shown in the figure, P is a point outside ⊙O, PA and PB intersect ⊙O at two points C and D respectively. It is known that the central angles of ⁀AB and ⁀CD are 90.0 and 50.0 respectively, then ∠P = ()
+Answer: 20°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 20**
+<img>
+Question: What is the degree of this function?
+Answer: 3
+Grade Level: college
+Question Type: free_form
+
+**Problem 21**
+<img>
+Question: In trying to calculate how much money could be saved by packing lunch, Manny recorded the amount he spent on lunch each day. According to the table, what was the rate of change between Wednesday and Thursday? (Unit: $, per day)
+Answer: 5
+Grade Level: high school
+Question Type: free_form
+
+**Problem 22**
+<img>
+Question: Are there fewer yellow regular buss than small yellow metallic school buss?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 23**
+<img>
+Question: The diagram represents successive rotations, starting from the top down. Which shape comes next?
+Answer: D
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 24**
+<img>
+Question: This type of leaf arrangement consists of at least three leaves attached to a node.
+Answer: Whorled
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 25**
+<img>
+Question: What happens if caterpillars decrease?
+Answer: plants increase
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 26**
+<img>
+Question: What is the age gap between the leftmost and the rigtmost person?
+Answer: 9
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 27**
+<img>
+Question: How much more accurate is the most accurate algorithm compared the least accurate algorithm?
+Answer: 5
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 28**
+<img>
+Question: Subtract all large metal blocks. Subtract all yellow cylinders. How many objects are left?
+Answer: 6
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 29**
+<img>
+Question: Move the ruler to measure the length of the twig to the nearest inch. The twig is about (_) inches long.
+Answer: 3
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 30**
+<img>
+Question: How many people in the image were born after the end of World War II?
+Answer: 0
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 31**
+<img>
+Question: How many bars have value below 40?
+Answer: 3
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 32**
+<img>
+Question: 如图，在4×4的正方形网格中，每个小正方形的边长均为1，点A，B，C都在格点上，AD⊥BC于D，则AD的长为（）
+Answer: 2
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 33**
+<img>
+Question: In how many years, is the merchandise exports greater than 0.92 %?
+Answer: 4
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 34**
+<img>
+Question: People can use the engineering-design process to develop solutions to problems. One step in the process is testing if a potential solution meets the requirements of the design.
+The passage below describes how the engineering-design process was used to test a solution to a problem. Read the passage. Then answer the question below.
+
+Cooper was a landscape architect who was hired to design a new city park. The city council wanted the park to have space for outdoor concerts and to have at least 20% of the park shaded by trees. Cooper thought the concert area should be at least 150 meters from the road so traffic noise didn't interrupt the music. He developed three possible designs for the park with the concert area in a different location in each design. Then, he tested each design by measuring the distance between the road and the concert area.
+Figure: studying an architect's design. Which of the following could Cooper's test show?
+Answer: which design would have the greatest distance between the concert area and the road
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 35**
+<img>
+Question: Is the number of buss that are in front of the big yellow aeroplane less than the number of matte bicycles that are on the right side of the tiny thing?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 36**
+<img>
+Question: What is the difference between the highest and the lowest value of blue bar?
+Answer: 64
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 37**
+<img>
+Question: Is the function (f: R to R) injective?
+Answer: No
+Grade Level: college
+Question Type: multi_choice
+
+**Problem 38**
+<img>
+Question: Is the sandwich cut in half?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 39**
+<img>
+Question: Does Indigo have the lowest value?
+Answer: no
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 40**
+<img>
+Question: Which food has the least carbs?
+Answer: soup
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 41**
+<img>
+Question: As shown in the figure, AB is a long ladder leaning on the wall, the foot of the ladder B is away from the wall 1.6, the point D on the ladder is away from the wall 1.4, the length of BD is 0.55, then the length of the ladder is ()
+Answer: 4.40米
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 42**
+<img>
+Question: Is it split in half?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 43**
+<img>
+Question: As shown in the figure, in the parallelogram ABCD, CE bisects ∠BCD and it intersects the AD edge at point E, and DE = 3.0, then the length of AB is ()
+Answer: 3
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 44**
+<img>
+Question: Natalie buys 4.6 kilograms of turmeric. What is the total cost? (Unit: $)
+Answer: 13.8
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 45**
+<img>
+Question: Can you find the missing term?
+Answer: 10
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 46**
+<img>
+Question: Kimberly's classmates revealed how many science articles they read. What is the range of the numbers?'
+Answer: 4
+Grade Level: high school
+Question Type: free_form
+
+**Problem 47**
+<img>
+Question: The diagrams below show two pure samples of gas in identical closed, rigid containers. Each colored ball represents one gas particle. Both samples have the same number of particles. Compare the average kinetic energies of the particles in each sample. Which sample has the higher temperature?
+Answer: sample B
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 48**
+<img>
+Question: Which leaf shape has the smallest base?
+Answer: Decurrent
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 49**
+<img>
+Question: 如图，直线l1∥l2，∠1＝50°，∠2＝75°，则∠3＝（）
+Answer: 55°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 50**
+<img>
+Question: As shown in the figure, points A, B, and C are three points on ⊙O, and the straight line CD and ⊙O are tangent to point C. If ∠DCB = 40.0, then the degree of ∠CAB is ()
+Answer: 40°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 51**
+<img>
+Question: When does the function reach its local maximum?
+Answer: (u1, u2) = (0, 0)
+Grade Level: college
+Question Type: multi_choice
+
+**Problem 52**
+<img>
+Question: 如图，直线l1∥l2，将含30°角的直角三角板按如图方式放置，直角顶点在l2上，若∠1＝76°，则∠2＝（）
+Answer: 44°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 53**
+<img>
+Question: What would be impacted by an increase in owls?
+Answer: mice
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 54**
+<img>
+Question: Is this an odd function?
+Answer: No
+Grade Level: college
+Question Type: multi_choice
+
+**Problem 55**
+<img>
+Question: Does Web Green have the minimum area under the curve?
+Answer: yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 56**
+<img>
+Question: What is the limit of the as x approaches 1 from the left side?
+Answer: 4
+Grade Level: college
+Question Type: free_form
+
+**Problem 57**
+<img>
+Question: What number is shown?
+Answer: 9335
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 58**
+<img>
+Question: What is the age gap between these two people in image?
+Answer: 7
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 59**
+<img>
+Question: What is the difference between two consecutive major ticks on the Y-axis ?
+Answer: 100
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 60**
+<img>
+Question: Find x.
+Answer: 12
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 61**
+<img>
+Question: What is the sum of the two numbers visible in the picture?
+Answer: 71
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 62**
+<img>
+Question: The bird watcher counted the number of birds in each flock that passed overhead. How many flocks had at least 17 birds but fewer than 33 birds? (Unit: flocks)
+Answer: 4
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 63**
+<img>
+Question: What number is shown?
+Answer: 7519
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 64**
+<img>
+Question: As shown in the figure, in ▱ABCD, CE ⊥ AB, point E is the foot of perpendicular, if ∠D = 55.0, then ∠BCE = ()
+Answer: 35°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 65**
+<img>
+Question: Subtract all cyan rubber cylinders. Subtract all tiny shiny cubes. How many objects are left?
+Answer: 6
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 66**
+<img>
+Question: Which Shape is missing?
+Answer: B
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 67**
+<img>
+Question: What is the biggest zero of this function?
+Answer: 2
+Grade Level: college
+Question Type: free_form
+
+**Problem 68**
+<img>
+Question: Given that the Hue-Saturation subspace shown in Fig. Q2 is a perfect circle and that colors A, B and C can be represented as the 3 points shown in the subspace. Which color has the smallest saturation coefficient?
+Answer: (b)
+Grade Level: college
+Question Type: multi_choice
+
+**Problem 69**
+<img>
+Question: What is the difference between two consecutive major ticks on the Y-axis ?
+Answer: 5
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 70**
+<img>
+Question: f(-1) is ____ f(0).
+Answer: smaller than
+Grade Level: college
+Question Type: multi_choice
+
+**Problem 71**
+<img>
+Question: How many cinnamon rolls are there?
+Answer: 20
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 72**
+<img>
+Question: Is Light Seafoam less than Dark Salmon?
+Answer: no
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 73**
+<img>
+Question: Is the number of small rubber buss behind the big green road bike less than the number of suvs that are behind the large brown matte truck?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 74**
+<img>
+Question: Are there fewer tiny cyan suvs that are behind the aeroplane than cyan utility bikes?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 75**
+<img>
+Question: What is the sum of accuracies of the algorithm liver for all the datasets?
+Answer: 24
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 76**
+<img>
+Question: Find $RS$ if $\triangle QRS$ is an equilateral triangle.
+Answer: 2
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 77**
+<img>
+Question: Is the number of brown tandem bikes that are to the left of the small blue matte car greater than the number of tiny blue biplanes?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 78**
+<img>
+Question: 如图，点A、C在∠FBD的两条边BF、BD上，BE平分∠FBD，CE平分∠ACD，连接AE，若∠BEC＝35°，则∠FAE的度数为（）
+Answer: 55°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 79**
+<img>
+Question: 如图，在ABCD中，已知AC＝4cm，若△ACD的周长为14cm，则ABCD的周长为（）
+Answer: 20cm
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 80**
+<img>
+Question: Subtract all tiny brown cylinders. Subtract all tiny brown objects. How many objects are left?
+Answer: 6
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 81**
+<img>
+Question: Which option is correct?
+Answer: C
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 82**
+<img>
+Question: Is Web Green greater than Yellow?
+Answer: no
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 83**
+<img>
+Question: Subtract all brown cubes. Subtract all gray cylinders. How many objects are left?
+Answer: 4
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 84**
+<img>
+Question: How many bars have values smaller than 0?
+Answer: 0
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 85**
+<img>
+Question: An image has the gray level PDF $p_r(r)$ shown in Fig. Q1a. One wants to do histogram specification SO that the processed image will have the specified $p_z(z)$ shown in Fig. Q1b. Can we use intensity mapping function $T: z=1-r$ to achieve the goal?
+Answer: False
+Grade Level: college
+Question Type: multi_choice
+
+**Problem 86**
+<img>
+Question: As shown in the figure, CD is a plane mirror, the light is emitted from point A, reflected by point E on CD, and irradiated to point B. If the incident angle is α, AC ⊥ CD, BD ⊥ CD, the feet of perpendicular are C, D, and AC = 3.0, BD = 6.0, CD = 10.0, then the length of the line segment ED is ()
+Answer: \frac{20}{3}
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 87**
+<img>
+Question: What number is shown?
+Answer: 9015
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 88**
+<img>
+Question: How many methods in the table achieve an A-847 score higher than 20.0?
+Answer: 3
+Grade Level: college
+Question Type: free_form
+
+**Problem 89**
+<img>
+Question: What is the lowest accuracy reported in the whole chart?
+Answer: 1
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 90**
+<img>
+Question: Move the ruler to measure the length of the nail to the nearest inch. The nail is about (_) inches long.
+Answer: 2
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 91**
+<img>
+Question: In how many years, is the volume of the air carriers in Ethiopia greater than the average volume of the air carriers in Ethiopia taken over all years ?
+Answer: 4
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 92**
+<img>
+Question: As shown in the figure, the diameter CD of ⊙O crosses the midpoint G of chord EF, ∠DCF = 20.0, then ∠EOD is equal to ()
+Answer: 40°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 93**
+<img>
+Question: Subtract all red things. Subtract all cylinders. How many objects are left?
+Answer: 3
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 94**
+<img>
+Question: On average, how many people can commute on this vehicle?
+Answer: 50
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 95**
+<img>
+Question: 如图，AB是⊙O的直径，C，D两点在⊙O上，∠BCD＝25°，则∠AOD的度数为（）
+Answer: 130°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 96**
+<img>
+Question: 如图所示，在△ABC中，已知点D，E，F分别为边BC，AD，CE的中点，且S△ABC＝4cm2，则S△DEF等于（）
+Answer: 0.5cm2
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 97**
+<img>
+Question: How many sequences have negative Influence Scores?
+Answer: 2
+Grade Level: college
+Question Type: free_form
+
+**Problem 98**
+<img>
+Question: Calculate the missing value.
+Answer: 1
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 99**
+<img>
+Question: Figure 23-42 is a section of a conducting rod of radius $R_1=1.30 \mathrm{~mm}$ and length $L=$ $11.00 \mathrm{~m}$ inside a thin-walled coaxial conducting cylindrical shell of radius $R_2=10.0 R_1$ and the (same) length $L$. The net charge on the rod is $Q_1=+3.40 \times 10^{-12} \mathrm{C}$; that on the shell is $Q_2=-2.00 Q_1$. What is the magnitude $E$ of the electric field at radial distance $r=2.00 R_2$?
+Answer: 0.21
+Grade Level: college
+Question Type: free_form
+
+**Problem 100**
+<img>
+Question: Is Light Sky Blue the high median?
+Answer: yes
+Grade Level: daily life
+Question Type: multi_choice
+

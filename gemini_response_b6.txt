@@ -1,0 +1,301 @@
+Here is a list of the problems with a proposed difficulty control technique for each.
+
+**Problem 1**
+Difficulty Control: The difficulty is controlled by the percentage values in the pie chart. To make it easier, use round integer percentages that form simple ratios (e.g., 50%, 25%, 15%, 10%). To make it harder, use decimal percentages that result in a non-integer or complex fractional ratio.
+
+**Problem 2**
+Difficulty Control: The difficulty is controlled by the area of the squares and the number of squares. To make it easier, use a perfect square for the area (e.g., 9, 16, 25) and a small number of squares. To make it harder, use a non-perfect square for the area (e.g., 10, 12), which results in an irrational side length, or increase the number of squares.
+
+**Problem 3**
+Difficulty Control: The difficulty is controlled by the position of the data points on the line graph. To make it easier, have the requested data point fall directly on a horizontal grid line. To make it harder, place the data point between grid lines, requiring the user to estimate/interpolate the value more precisely.
+
+**Problem 4**
+Difficulty Control: The difficulty is controlled by the visual separation between the data series. To make it easier, ensure the data series being asked about is clearly distinct from the others. To make it harder, make the data series overlap or run very close to each other, requiring more careful visual discrimination.
+
+**Problem 5**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the filtering criteria. To make it easier, decrease the total number of objects and use simple, single-attribute questions (e.g., "Subtract all green cubes"). To make it harder, increase the number of objects and use questions with multiple attributes (e.g., "Subtract all small, matte, green objects").
+
+**Problem 6**
+Difficulty Control: The difficulty is controlled by the values of the rectangle's side lengths. To make it easier, use small, whole numbers. To make it harder, use larger numbers, decimals, or fractions.
+
+**Problem 7**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the filtering criteria. To make it easier, decrease the total number of objects and use simple, single-attribute questions. To make it harder, increase the number of objects, include partially obscured objects, and use questions with multiple attributes (e.g., "Subtract all small, shiny, yellow objects").
+
+**Problem 8**
+Difficulty Control: The difficulty is controlled by the number of categories in the legend and the distinctness of the colors. To make it easier, use fewer categories with high-contrast colors. To make it harder, use more categories with subtle shades of the same color, requiring finer discrimination.
+
+**Problem 9**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the filtering criteria. To make it easier, decrease the total number of objects and use simple, single-attribute questions. To make it harder, increase the number of objects and use questions with multiple attributes.
+
+**Problem 10**
+Difficulty Control: The difficulty is controlled by the radius of the larger circle. To make it easier, use an even integer that results in a whole number answer for the smaller radius. To make it harder, use an odd integer or a decimal that results in a fractional or decimal answer.
+
+**Problem 11**
+Difficulty Control: The difficulty is controlled by the size of the dataset (number of leaves) and the complexity of the question. To make it easier, use a small dataset and ask for a simple lookup. To make it harder, increase the size of the dataset and ask for statistical calculations like the mean, median, or range.
+
+**Problem 12**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the filtering criteria. To make it easier, decrease the total number of objects and use simple criteria. To make it harder, increase the number of objects, vary their properties (size, color, material) more widely, and use more complex sorting rules.
+
+**Problem 13**
+Difficulty Control: The difficulty is controlled by the number of items to be counted. To make it easier, have fewer items. To make it harder, increase the number of items and add visually distracting elements in the background.
+
+**Problem 14**
+Difficulty Control: This question requires external knowledge. To make it a self-contained math problem, the birth years of the two individuals would be provided. The difficulty could then be controlled by the complexity of the date subtraction (e.g., simple year subtraction vs. subtraction including months and days).
+
+**Problem 15**
+Difficulty Control: The difficulty is controlled by the given side lengths. To make the Triangle Inequality Theorem application easier, use numbers that are far apart (e.g., 3 and 10). To make it harder, use numbers that are very close (e.g., 7 and 8), forcing more careful calculation of the possible range for the third side.
+
+**Problem 16**
+Difficulty Control: The difficulty is controlled by the values of the bars. To make the ratio calculation easier, use values that are simple integer multiples of each other (e.g., 20 and 10 for a ratio of 2). To make it harder, use values that result in a fractional or decimal ratio (e.g., 16 and 7).
+
+**Problem 17**
+Difficulty Control: The difficulty is controlled by the angle of the vector. To make it easier, align the vector with one of the axes or at a 45-degree angle. To make it harder, set the vector at an angle that requires more complex trigonometric estimation (e.g., 30 or 60 degrees). The magnitude can also be changed from a round number to a decimal.
+
+**Problem 18**
+Difficulty Control: The difficulty is controlled by the relative sizes of the pie chart slices. To make it easier, have the slice in question be clearly much smaller than the largest slice. To make it harder, make several slices very close in size, requiring careful visual comparison.
+
+**Problem 19**
+Difficulty Control: The difficulty is controlled by the base of the exponential function and the input value. To make it easier, use a simple integer base like 2 or 3 and an integer input. To make it harder, use a fractional or decimal base, or ask for the value at a non-integer input, requiring estimation from the graph.
+
+**Problem 20**
+Difficulty Control: The difficulty is controlled by the length of the object being measured. To make it easier, have the object's end align perfectly with a whole number on the ruler. To make it harder, have the end fall between the main markings, requiring estimation or reading of smaller subdivisions (e.g., half-inch marks).
+
+**Problem 21**
+Difficulty Control: The difficulty is controlled by the area of the smaller triangle (△DFH) and the ratio of similarity. To make it easier, use an area and ratio that result in a whole number for the final area. To make it harder, use values that result in a fractional or decimal answer.
+
+**Problem 22**
+Difficulty Control: The difficulty is controlled by the given lengths and area. The underlying principle is that the ratio of areas of triangles with the same height is equal to the ratio of their bases. To make it easier, use simple integer ratios for the bases (e.g., 1:1 or 1:2). To make it harder, use more complex ratios (e.g., 2:5).
+
+**Problem 23**
+Difficulty Control: The difficulty is controlled by the time shown on the clock. "O'clock" is the easiest. Difficulty increases with "half past," then "quarter past/to," then times to the nearest five minutes, and finally times to the nearest minute.
+
+**Problem 24**
+Difficulty Control: The difficulty is controlled by the threshold value. To make it easier, set the threshold far from any data points. To make it harder, set the threshold very close to one or more data points, requiring a more careful reading of the y-axis. Increasing the total number of data points also increases difficulty.
+
+**Problem 25**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the comparative question. To make it easier, reduce the number of objects and simplify the criteria (e.g., "Are there more buses than cars?"). To make it harder, increase the number of objects and use complex, multi-clause criteria.
+
+**Problem 26**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the filtering criteria. To make it easier, decrease the total number of objects and use simple criteria. To make it harder, increase the number of objects, use similar colors or shapes, and use multi-attribute criteria.
+
+**Problem 27**
+Difficulty Control: The difficulty of finding the mode is controlled by the size and distribution of the dataset. To make it easier, use a small dataset with one clear mode. To make it harder, use a larger dataset, introduce multiple modes (bimodal/multimodal distributions), or make the frequencies of different numbers very close.
+
+**Problem 28**
+Difficulty Control: The difficulty is controlled by the given side lengths of the parallelogram. To make it easier, use integer values that lead to simple arithmetic. To make it harder, use fractional or decimal values.
+
+**Problem 29**
+Difficulty Control: The difficulty is controlled by how the bar aligns with the axis grid. To make it easier, have the bar end exactly on a labeled grid line. To make it harder, have the bar end between grid lines, requiring estimation.
+
+**Problem 30**
+Difficulty Control: The difficulty is controlled by the given angle measures. To make it easier, use round numbers or common angles (e.g., 30°, 60°) that result in simple calculations. To make it harder, use decimal angle measures that require more careful addition and subtraction.
+
+**Problem 31**
+Difficulty Control: The difficulty is controlled by the values of the bars. The easiest version includes a bar with a value of zero. A slightly harder version would have all non-zero bars, with the difficulty controlled by how visually close the two smallest bars are.
+
+**Problem 32**
+Difficulty Control: The difficulty is controlled by the complexity of the chart. For this simple lookup, the difficulty is low. To make it harder, one could add more categories (rows) or more segments to each bar, increasing the cognitive load required to find the correct value.
+
+**Problem 33**
+Difficulty Control: The difficulty is controlled by the relationship between the given angle and the requested angle. Finding a congruent angle (e.g., vertical or alternate interior) is easier than finding a supplementary angle (e.g., consecutive interior), which requires an extra calculation step.
+
+**Problem 34**
+Difficulty Control: The difficulty is controlled by the given angle measure. To make it easier, use a number that is easy to work with (e.g., an even number like 80° so the bisected angle is 40°). To make it harder, use an odd number or a decimal.
+
+**Problem 35**
+Difficulty Control: The difficulty is controlled by the given area of the parallelogram. To make the calculation easier, provide an even number. To make it slightly harder, provide an odd number or a decimal, resulting in a non-integer answer for the shaded area.
+
+**Problem 36**
+Difficulty Control: The difficulty is controlled by the number represented by the base-ten blocks. To make it easier, use fewer tens rods and ones units. To make it harder, increase the number of rods and units, and introduce hundreds flats or thousands cubes.
+
+**Problem 37**
+Difficulty Control: This is a multi-step geometry problem. The difficulty is primarily controlled by the given angle measure. Using a common angle like 30° or 45° is easier than using a less common one like 27°.
+
+**Problem 38**
+Difficulty Control: The difficulty is controlled by the number of data points and their values. To make it easier, use fewer data points and integer values. To make it harder, increase the number of data points and use decimal values, which makes the required average calculation more tedious.
+
+**Problem 39**
+Difficulty Control: The difficulty is controlled by the position of the dial's indicator. To make it easier, point it directly at a numbered marking. To make it harder, point it between markings, requiring estimation.
+
+**Problem 40**
+Difficulty Control: The difficulty is controlled by the radius of the circle. The core concept remains the same (arc length of a 60° sector). Using a radius that is a simple integer makes the calculation straightforward. Using a fractional or irrational radius would make it harder.
+
+**Problem 41**
+Difficulty Control: This is a college-level calculus problem. The difficulty is controlled by the complexity of the function c(t) and the number of intervals specified for Simpson's Rule. A smoother curve and fewer intervals make the manual calculation easier. Having the curve pass through integer coordinates on the grid also simplifies the process.
+
+**Problem 42**
+Difficulty Control: The difficulty is controlled by the given lengths for the tangent and the hypotenuse. To make it easier, use numbers that are part of a Pythagorean triple (e.g., 8 and 10, which yields a radius of 6). To make it harder, use non-triple integers that result in an irrational radius.
+
+**Problem 43**
+Difficulty Control: The difficulty is controlled by the given angle measure. Using values that lead to simple arithmetic steps is easier. For example, starting with an even number for ∠D makes finding half of it simpler.
+
+**Problem 44**
+Difficulty Control: The difficulty of this pattern-finding puzzle is controlled by the complexity of the underlying arithmetic rule. A rule involving simple addition/subtraction is easier than one involving multiplication, division, or multiple steps. (The apparent rule is: `Center = (Bottom Left - Top) + Bottom Right`).
+
+**Problem 45**
+Difficulty Control: The difficulty is controlled by the lengths of the rhombus's diagonals. To make it easier, use even numbers so their halves are integers. Using lengths that result in a side length that is also an integer (forming Pythagorean triples) further simplifies calculations.
+
+**Problem 46**
+Difficulty Control: For the given question ("at least 0"), the task is simply to count all data points. Difficulty is controlled by the size of the dataset. To create a more variable difficulty, the question can be changed to "How many racks have more than X ties?", where X can be adjusted.
+
+**Problem 47**
+Difficulty Control: The difficulty is controlled by the complexity of the 3D block structure and the similarity of the answer choices. To make it easier, use a simpler structure with fewer blocks and make the incorrect options clearly wrong. To make it harder, use a more complex structure with overhangs and make the incorrect options differ by only a single block.
+
+**Problem 48**
+Difficulty Control: The difficulty is controlled by the complexity of the graphed function. A simple sine wave is easy. To make it harder, one could use a more complex function with multiple local minima or add noise to the data points, requiring estimation.
+
+**Problem 49**
+Difficulty Control: The difficulty is controlled by the number of bars to check and how close their values are to the threshold. To make it easier, use fewer bars. To make it harder, increase the number of bars and categories, requiring more visual scanning.
+
+**Problem 50**
+Difficulty Control: The difficulty is controlled by the "noisiness" of the line graph. To make it easier, have a smooth curve with one obvious maximum and minimum. To make it harder, have many local peaks and troughs, requiring careful scanning to find the absolute highest and lowest points. Using decimal values for the data points also adds to the calculation difficulty.
+
+**Problem 51**
+Difficulty Control: The difficulty is controlled by the magnitude of the numbers in the table. To make the subtraction easier, use small, single or double-digit numbers. To make it harder, use larger numbers that might require borrowing.
+
+**Problem 52**
+Difficulty Control: This question requires external knowledge. To make it a self-contained math problem, the birth years of the individuals and the end date of WWII would be provided. The difficulty would then be controlled by the number of individuals to check.
+
+**Problem 53**
+Difficulty Control: This is a subjective visual interpretation question, not a standard math problem. Difficulty is not parametrically controllable.
+
+**Problem 54**
+Difficulty Control: The difficulty is controlled by the number of objects, the complexity of their attributes, and the spatial relationships involved. To make it easier, reduce the number of objects and simplify the question (e.g., "Are there more cars than motorcycles?"). To make it harder, increase object count and use complex, multi-clause criteria involving location ("in front of," "behind").
+
+**Problem 55**
+Difficulty Control: The difficulty is controlled by the relative heights of the bars. To make it easy, have the highest bar be significantly taller than all others, as in this example. To make it harder, make the two highest bars very close in value, requiring careful reading of the y-axis or labels.
+
+**Problem 56**
+Difficulty Control: Assuming the question is "Is the value for Web Maroon the median value?", the difficulty is controlled by the number of categories. An odd number of categories (like 5 here) makes finding the median easier than an even number, which would require averaging the middle two.
+
+**Problem 57**
+Difficulty Control: The difficulty is controlled by the similarity of the colors in the map's legend. If the colors for adjacent categories are very similar, it is harder to distinguish between them. High-contrast colors make it easier.
+
+**Problem 58**
+Difficulty Control: The difficulty is controlled by the length of the line being measured. To make it easier, have the line's end align perfectly with a whole number on the ruler. To make it harder, have the end fall between the main markings, requiring estimation.
+
+**Problem 59**
+Difficulty Control: The difficulty is controlled by the visual complexity of the stacked bar chart. To make it harder, the height of the bottom segment (blue) could be made more variable, which would make it more difficult to visually judge the height of the top segment (navy blue) alone.
+
+**Problem 60**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the comparative question. To make it easier, reduce the number of objects and simplify the criteria. To make it harder, increase the number of objects and use complex, multi-clause criteria.
+
+**Problem 61**
+Difficulty Control: The difficulty is controlled by the presentation of the function's graph. A standard graph like this one is straightforward for students of trigonometry. To make it harder, one could show only a small portion of the graph, or apply transformations (shifts, stretches) to the base function, e.g., plotting `A*tan(Bx - C) + D`.
+
+**Problem 62**
+Difficulty Control: The difficulty is controlled by the values of the bars. To make the subtraction easier, use round numbers that align perfectly with the grid lines. To make it harder, use decimal values or have the bars end between grid lines, requiring estimation before calculation.
+
+**Problem 63**
+Difficulty Control: The difficulty is controlled by the time shown. "Quarter past" is of intermediate difficulty. Easier times are "o'clock" and "half past." Harder times would be to the nearest 5 minutes (e.g., "ten past six") or to the minute.
+
+**Problem 64**
+Difficulty Control: The difficulty is controlled by the size of the table (number of rows and columns). To make it easier, use a smaller table. To make it harder, increase the number of entries that need to be scanned to find the maximum value.
+
+**Problem 65**
+Difficulty Control: The difficulty is controlled by the given angle and side lengths. To make it easier, use one of the special right triangles (30-60-90 or 45-45-90) and integer side lengths. To make it harder, use a non-special angle, requiring a calculator, or use side lengths that result in an irrational answer.
+
+**Problem 66**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the filtering criteria. To make it easier, decrease the total number of objects and use simple criteria. To make it harder, increase the number of objects, use similar colors or shapes, and use multi-attribute criteria.
+
+**Problem 67**
+Difficulty Control: The difficulty is controlled by the number of groups (years) and how close the differences are. To make it easier, use fewer years and have one year where the difference is clearly the smallest. To make it harder, increase the number of years and make the differences for several years very close to each other, requiring careful calculation for each.
+
+**Problem 68**
+Difficulty Control: The difficulty of this legend-reading question is controlled by the complexity of the legend's text and layout. To make it harder, one could use more technical language or a less intuitive symbol system.
+
+**Problem 69**
+Difficulty Control: The difficulty is controlled by the numbers used for the lengths. To make it easier, use even integers that are easily halved. To make it harder, use odd integers or fractions, requiring more complex arithmetic.
+
+**Problem 70**
+Difficulty Control: The difficulty is controlled by the number of rows in the table to be scanned. To make it easier, have fewer entries. To make it harder, increase the number of entries and make the highest values very close to each other, requiring careful comparison.
+
+**Problem 71**
+Difficulty Control: The difficulty is controlled by the equation of the function. A simple semicircle centered at the origin is easiest. Shifting the center, as done here, adds a step. The radius value can also be changed from an integer to a fraction or decimal to make the area calculation more complex.
+
+**Problem 72**
+Difficulty Control: The difficulty is controlled by the length of the object being measured. To make it easier, have the object's end align perfectly with a whole number on the ruler. To make it harder, have the end fall between the main markings, requiring estimation.
+
+**Problem 73**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the comparative question. To make it easier, reduce the number of objects and simplify the criteria. To make it harder, increase the number of objects and use complex, multi-clause criteria.
+
+**Problem 74**
+Difficulty Control: The difficulty is controlled by the given area of the square. To make it easier, use a perfect square (like 1, 4, 9). To make it harder, use a non-perfect square area (like 2 or 3), which results in an irrational side length.
+
+**Problem 75**
+Difficulty Control: The difficulty is controlled by the values for the height, width, and slope. To make it easier, use simple integer values and a simple slope ratio (e.g., 1:1 or 1:2). To make it harder, use decimal values or a more complex slope ratio.
+
+**Problem 76**
+Difficulty Control: The difficulty is controlled by the number of bars and groups in the chart. The more elements there are, the more visual scanning is required to find the single smallest bar. Making the values of the smallest few bars very close would also increase difficulty.
+
+**Problem 77**
+Difficulty Control: The difficulty is controlled by the number of objects, the complexity of their attributes, and the spatial relationships involved. To make it easier, reduce the number of objects and simplify the question. To make it harder, increase object count and use complex, multi-clause criteria involving relative positions.
+
+**Problem 78**
+Difficulty Control: The difficulty is controlled by the side lengths and the resulting angle. To make it easier, use side lengths whose ratio corresponds to the tangent of a special angle (from a 30-60-90 or 45-45-90 triangle). To make it harder, as in this case, use ratios that require an inverse tangent calculation.
+
+**Problem 79**
+Difficulty Control: The difficulty is controlled by the given lengths of the sides and diagonals. To make it easier, use even numbers for the diagonals so their bisected lengths are integers.
+
+**Problem 80**
+Difficulty Control: This question requires external knowledge. To make it a self-contained math problem, the birth years of the two individuals would be provided. The difficulty could then be controlled by the complexity of the date subtraction.
+
+**Problem 81**
+Difficulty Control: This is a knowledge-based question, not a math problem. Difficulty is inherent in the user's geographical and corporate knowledge.
+
+**Problem 82**
+Difficulty Control: The difficulty is controlled by the complexity of the food web. To make it easier, use a simple linear food chain. To make it harder, increase the number of organisms and the number of connections between them, requiring the user to trace multiple potential effects.
+
+**Problem 83**
+Difficulty Control: The difficulty is controlled by the length of the object being measured. To make it easier, have the object's end align perfectly with a whole number on the ruler. To make it harder, have the end fall between the main markings, requiring estimation.
+
+**Problem 84**
+Difficulty Control: The difficulty is controlled by the complexity of the algebraic expression for the arc measure. A one-step linear equation (`2x - 27 = 83`) is relatively easy. A two-step equation or a quadratic expression would make it harder.
+
+**Problem 85**
+Difficulty Control: The difficulty is controlled by the length and complexity of the food chain. A simple, linear chain is easy. A more complex food web (like in Problem 82) would be harder.
+
+**Problem 86**
+Difficulty Control: The difficulty is controlled by the shape of the function's graph. A function that clearly and significantly fails the horizontal line test is easy. A function that is "almost" invertible (e.g., has a very shallow curve or a small "bump") would be harder to judge.
+
+**Problem 87**
+Difficulty Control: The difficulty is controlled by the complexity of the food web. To make it easier, ask about a direct predator-prey relationship. To make it harder, ask about a relationship that is several steps removed, requiring tracing effects through the web.
+
+**Problem 88**
+Difficulty Control: The difficulty is controlled by the clarity and legibility of the chart's labels. To make it harder, one could use smaller fonts or more complex category labels (e.g., overlapping date ranges).
+
+**Problem 89**
+Difficulty Control: This is a subjective visual interpretation question. Difficulty is not parametrically controllable.
+
+**Problem 90**
+Difficulty Control: The difficulty is controlled by the complexity of the relationships presented in the answer choices. Choices involving simple congruent angles are easier to verify than choices that require algebraic manipulation or summing multiple angles.
+
+**Problem 91**
+Difficulty Control: The difficulty of this pattern-finding puzzle is controlled by the complexity of the underlying arithmetic rule. The rule here (sum the corners and square the result) is multi-step and harder than a simple addition. An easier rule would be to just sum the numbers. A harder rule could involve different operations for different corners.
+
+**Problem 92**
+Difficulty Control: The difficulty is controlled by the length of the food chain. Tracing the effect one step up the chain is easy. A harder question would ask about the effect on an organism three or four steps away.
+
+**Problem 93**
+Difficulty Control: This is a visual interpretation question that relies on understanding forced perspective. It is not a standard math problem.
+
+**Problem 94**
+Difficulty Control: This is a complex, multi-step geometry problem. The difficulty is primarily controlled by the given angle. Using a more common angle like 60° (making some triangles equilateral) or 90° (if it were a square) would likely simplify the intermediate steps.
+
+**Problem 95**
+Difficulty Control: The difficulty is controlled by the relative lengths of the bars being compared. To make it easier, have a large, obvious difference in length. To make it harder, make the bars very close in length, requiring careful comparison with the x-axis grid.
+
+**Problem 96**
+Difficulty Control: The difficulty is controlled by the prices of the items and the budget. To make it easier, use round numbers that are simple to add. To make it harder, use numbers with cents that require carrying during addition and careful comparison.
+
+**Problem 97**
+Difficulty Control: The difficulty is controlled by the given side lengths and angle. To make it easier, use integer side lengths and a special angle (like 30°, 45°, 60°) for which the sine value is well-known. To make it harder, use a non-special angle or decimal side lengths.
+
+**Problem 98**
+Difficulty Control: The difficulty is controlled by the given angle and side. Using special angles (30-60-90 or 45-45-90) is easier than using other angles that would require a calculator. Placing the variable `x` on the hypotenuse would change the trigonometric function needed.
+
+**Problem 99**
+Difficulty Control: This question requires external knowledge. To make it a self-contained math problem, the birth years of the individuals would be provided. The difficulty could then be controlled by the complexity of the date subtraction.
+
+**Problem 100**
+Difficulty Control: This is a very advanced high-school-level geometry problem involving properties of circles, chords, and potentially coordinate geometry or trigonometry. The difficulty is controlled by the given lengths. Using values that lead to simpler intermediate calculations would make it slightly easier, but the core conceptual difficulty remains high.

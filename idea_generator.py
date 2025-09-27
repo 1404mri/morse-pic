@@ -6,6 +6,8 @@ from google import genai
 from google.genai import types
 from io import BytesIO
 
+BATCH_SIZE = 100  # Number of problems to process in each batch
+
 def load_mathvista_dataset(dataset_name: str = "AI4Math/MathVista") -> List[Dict[str, Any]]:
     """Load MathVista dataset from Hugging Face or return sample data if loading fails."""
     from datasets import load_dataset
@@ -121,31 +123,33 @@ def main():
         print(f"Error loading context examples: {e}")
         return
 
-    contents = create_gemini_prompt(dataset, examples)
-    
-    with open(args.output, "w") as f:
-        f.write("".join([str(c) if type(c) != types.Part else "<img>" for c in contents]))
-    print("Saved prompt to ", args.output) 
-    
-    if args.call_api:
-            
-        try:
-            print(f"\nCalling Gemini API ....")
-            response = call_gemini_api(contents)
-            
-            print("Gemini API Response:")
-            print("=" * 50)
-            print(response)
-            print("=" * 50)
-            
-            # Save response to file
-            with open("gemini_response.txt", "w") as f:
-                f.write(response)
-            print("\nResponse saved to 'gemini_response.txt'")
-            
-        except Exception as e:
-            print(f"Error calling Gemini API: {e}")
-            return 1
+    for i in range(0, len(dataset), BATCH_SIZE):
+        dataset_batch = dataset[i:i + BATCH_SIZE]
+        contents = create_gemini_prompt(dataset_batch, examples)
+        
+        with open(args.output.removesuffix(".txt") + f"_b{i // 100}.txt", "w") as f:
+            f.write("".join([str(c) if type(c) != types.Part else "<img>" for c in contents]))
+        print("Saved prompt to ", args.output) 
+        
+        if args.call_api:
+                
+            try:
+                print(f"\nCalling Gemini API ....")
+                response = call_gemini_api(contents)
+                
+                print("Gemini API Response:")
+                print("=" * 50)
+                print(response)
+                print("=" * 50)
+                
+                # Save response to file
+                with open(f"gemini_response_b{i // 100}.txt", "w") as f:
+                    f.write(response)
+                print(f"\nResponse saved to 'gemini_response_b{i // 100}.txt'")
+                
+            except Exception as e:
+                print(f"Error calling Gemini API: {e}")
+                return 1
 
 if __name__ == "__main__":
     main()

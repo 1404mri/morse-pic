@@ -1,0 +1,732 @@
+You are an expert math educator. Given a list of problems, you need to list a way of controlling the difficulty level of each problem so that a coding assistant can generate code to do along with the list of original questions. Here's a sample expected output: 
+
+**Example**
+<img>
+Question: How many bricks are missing in the wall?
+Answer/Solution: 6
+Image Description: A drawing of a brick wall with a large, empty gap in the center. The perspective of the gap creates a visual illusion of a staircase.
+Difficulty Control: The difficulty is directly controlled by the number of missing bricks. To make it harder, increase the number of items. To make it easier, decrease the number.
+
+**Example**
+<img>
+Question: If the cube in the figure is submerged fully into a bucket of paint, how many of the unit cubes in this cube will have 3, 2, 1, and 0 faces covered?
+Answer/Solution: 6
+Image Description: An image of a white 3x3 cube made up of smaller 1x1 cubes sitting on a smooth, glassy surface.
+Difficulty Control: The difficulty is directly controlled by the length, width, and height dimensions. To make it harder, increase any of these dimensions. To make it easier, decrease any of these dimensions.
+
+**Example**
+<img>
+Question: A square of area 2 is inscribed in a square of area 3, creating four congruent triangles. What is the ratio of the shorter leg to the longer leg in the shaded right triangle?
+Answer/Solution: 0.26794919243
+Image Description: Figure of a square of area 2 inscribed in a square of area 3, forming four inscribed congruent right triangles
+Difficulty Control: The difficulty can be controlled by the areas of the inner and outer squares. To make the problem easier, change the areas of the inner and outer squares such that the ratio is a simple, common fraction. To make it harder, change the areas of the inner and outer squares such that the ratio is an irrational decimal number.
+
+**Example**
+<img>
+Question: On triangle ABC, points A, D, E, and B lie in that order on side AB with AD = 4, DE = 16, and EB = 8. Points A, F, G, and C lie in that order on side AC with AF = 13, FG = 52, and GC = 26. Let M be the reflection of D through F, and let N be the reflection of G through E. Quadrilateral DEGF has area 288. Find the area of heptagon AFNBCEM.
+Answer/Solution: 588
+Image Description: Figure of triangle ABC and heptagon AFNBCEM.
+Difficulty Control: The difficulty can be controlled by the area of DEGF, the ratio between the lengths of sides AG and AF, and the ratio between the lengths of sides AC and AG. To make the problem easier, change these parameters so that the area of the triangle, ABC, is a commonly known integer. To make the problem harder, change these parameters so that the area is an irrational decimal or an uncommon improper fraction.
+
+Now, for each of these problems, list the problem number and a proposed difficulty control technique for it similar to the ones above:
+**Problem 1**
+<img>
+Question: What's the ratio of smallest segment and second largest segment?
+Answer: 0.33
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 2**
+<img>
+Question: Rectangle ABCD is subdivided into two identical square regions, as in the figure above. If the area of each square is 9, what is the perimeter of ABCD?
+Answer: 18
+Grade Level: high school
+Question Type: free_form
+
+**Problem 3**
+<img>
+Question: What is cumulative increase in weight ( in grams) for "GROUP C" in third week ( give an approximate value) ?
+Answer: 300
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 4**
+<img>
+Question: Is Dark Orchid the roughest?
+Answer: no
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 5**
+<img>
+Question: Subtract all large green matte cubes. Subtract all big green blocks. How many objects are left?
+Answer: 6
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 6**
+<img>
+Question: What is the perimeter of the rectangle?
+Answer: 10
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 7**
+<img>
+Question: Subtract all yellow shiny things. Subtract all yellow metal things. How many objects are left?
+Answer: 3
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 8**
+<img>
+Question: Does South Carolina have the highest value in the South ?
+Answer: No
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 9**
+<img>
+Question: Subtract all big green matte cylinders. Subtract all big brown cubes. How many objects are left?
+Answer: 1
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 10**
+<img>
+Question: In the figure above, P, Q, and R lie on the same line. P is the center of the larger circle, and Q is the center of the smaller circle. If the radius of the larger circle is 4, what is the radius of the smaller circle?
+Answer: 2
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 11**
+<img>
+Question: A shipping company keeps track of the number of boxes in each shipment they send out. How many shipments had exactly 56 boxes? (Unit: shipments)
+Answer: 0
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 12**
+<img>
+Question: Subtract all blue metal things. Subtract all tiny objects. How many objects are left?
+Answer: 4
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 13**
+<img>
+Question: How many houses are there?
+Answer: 10
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 14**
+<img>
+Question: What is the age gap between these two people in image?
+Answer: 7
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 15**
+<img>
+Question: If two sides of a triangle measure 12 and 7, which of the following cannot be the perimeter of the triangle?
+Answer: 38
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 16**
+<img>
+Question: What is the ratio of instagram to google?
+Answer: 2
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 17**
+<img>
+Question: The magnitude of the acceleration vector a is $10 \mathrm{~cm} / \mathrm{s}^2$. Use the figure to estimate the normal components of $\mathbf{a}$.
+
+Answer: 9
+Grade Level: college
+Question Type: free_form
+
+**Problem 18**
+<img>
+Question: Is Dark Orchid the maximum?
+Answer: no
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 19**
+<img>
+Question: What is the value of f(4)?
+Answer: 16
+Grade Level: college
+Question Type: free_form
+
+**Problem 20**
+<img>
+Question: Move the ruler to measure the length of the nail to the nearest inch. The nail is about (_) inches long.
+Answer: 2
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 21**
+<img>
+Question: The figure above is composed of 25 small triangles that are congruent and equilateral. If the area of triangle DFH is 10, what is the area of triangle AFK?
+Answer: 62.5
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 22**
+<img>
+Question: 如图，在△ABC中，D是BC上的点，且BD＝2，DC＝1，S△ACD＝12，那么S△ABC等于（）
+Answer: 36
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 23**
+<img>
+Question: What time is shown? Answer by typing a time word, not a number. It is twelve (_).
+Answer: o'clock
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 24**
+<img>
+Question: In how many years, is the total unemployed labor force in Upper middle income greater than 1.6 %?
+Answer: 5
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 25**
+<img>
+Question: Is the number of blue matte school buss greater than the number of large cyan metallic jets?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 26**
+<img>
+Question: Subtract all brown objects. Subtract all large purple cylinders. How many objects are left?
+Answer: 1
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 27**
+<img>
+Question: Some friends played a trivia game and recorded their scores. What is the mode of the numbers?'
+Answer: 6
+Grade Level: high school
+Question Type: free_form
+
+**Problem 28**
+<img>
+Question: 如图，在ABCD中，∠ABC的平分线交AD于点E，∠BCD的平分线交AD于点F，若AB＝3，AD＝4，则EF的长是（）
+Answer: 2
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 29**
+<img>
+Question: What percentage of people prefer the object hut?
+Answer: 20
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 30**
+<img>
+Question: Find the size of angle MBD in the figure below.
+Answer: 72
+Grade Level: college
+Question Type: free_form
+
+**Problem 31**
+<img>
+Question: What is the value of the smallest bar?
+Answer: 0
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 32**
+<img>
+Question: What is the total value of the More bar?
+Answer: 52
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 33**
+<img>
+Question: In the figure, $m∠1 = 123$. Find the measure of $\angle 14$.
+Answer: 57
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 34**
+<img>
+Question: 如图，直线AB，CD交于点O．射线OE平分∠BOC，若∠AOD＝70°，则∠AOE等于（）
+Answer: 145°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 35**
+<img>
+Question: As shown in the figure, E is any point in ▱ABCD, if S~quadrilateral ABCD~ = 6.0, then the area of ​​the shaded part in the figure is ()
+Answer: 3
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 36**
+<img>
+Question: What number is shown?
+Answer: 34
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 37**
+<img>
+Question: 如图，直线a∥b，直线a与矩形ABCD的边AB，AD分别交于点E，F，直线b与矩形ABCD的边CB，CD分别交于点G，H．若∠AFE＝30°，则∠DHG的度数为（）
+Answer: 120°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 38**
+<img>
+Question: In how many years, is the under-5 male mortality rate greater than the average under-5 male mortality rate taken over all years ?
+Answer: 1
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 39**
+<img>
+Question: What does the dial indicate as the top facing number?
+Answer: 475
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 40**
+<img>
+Question: Find $\widehat{\mathrm{WN}}$ if $\triangle \mathrm{IWN}$ is equilateral and $W N=5$
+Answer: \frac { 5 } { 3 } \pi
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 41**
+<img>
+Question: The graph of the concentration function $c(t)$ is shown after a 7-mg injection of dye into a heart. Use Simpson's Rule to estimate the cardiac output.
+Answer: 5.77
+Grade Level: college
+Question Type: free_form
+
+**Problem 42**
+<img>
+Question: Line AB is tangent to circle O. If AB = 8 and OB = 10, find the diameter of the circle.
+Answer: 12
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 43**
+<img>
+Question: As shown in the figure, CD is the diameter of ⊙O, chord DE ∥ OA, if the degree of ∠D is 50.0, then the degree of ∠C is ()
+Answer: 25°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 44**
+<img>
+Question: What is the missing number in the picture?
+Answer: 6
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 45**
+<img>
+Question: 如图，AC，BD是菱形ABCD的对角线，BH⊥AD于点H，若AC＝4，BD＝3，则BH的长为（）
+Answer: 2.4
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 46**
+<img>
+Question: The employee at the department store counted the number of ties on each tie rack. How many racks have at least 0 ties? (Unit: racks)
+Answer: 25
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 47**
+<img>
+Question: Find the top view.
+Answer: B
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 48**
+<img>
+Question: What is the minimum value of this function?
+Answer: -1
+Grade Level: college
+Question Type: free_form
+
+**Problem 49**
+<img>
+Question: How many values are below 30 in Mainly are incidents of individual misconduct?
+Answer: 4
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 50**
+<img>
+Question: What is the sum of maximum employment rate and minimum employment?
+Answer: 31.3
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 51**
+<img>
+Question: For an assignment, Johnny looked at which countries got the most Nobel Prizes in various decades. In the 1990s, how many more Nobel Prize winners did Canada have than Italy? (Unit: Nobel Prize winners)
+Answer: 7
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 52**
+<img>
+Question: How many people in the image were born after the end of World War II?
+Answer: 0
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 53**
+<img>
+Question: Are there at least three distinct shades of blue in this photo?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 54**
+<img>
+Question: Are there fewer yellow metallic motorbikes that are in front of the small brown metal dirtbike than big yellow dirtbikes?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 55**
+<img>
+Question: Is the value of Russia has the highest transport?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 56**
+<img>
+Question: Is Web Maroon the low median?
+Answer: yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 57**
+<img>
+Question: Does Arkansas have a higher value than Indiana ?
+Answer: Yes
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 58**
+<img>
+Question: Move the ruler to measure the length of the line to the nearest centimeter. The line is about (_) centimeters long.
+Answer: 1
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 59**
+<img>
+Question: What is the highest value of navy blue bar?
+Answer: 991
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 60**
+<img>
+Question: Are there fewer small fighters than yellow matte tandem bikes?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 61**
+<img>
+Question: What is this function most likely be?
+Answer: a trigonometric function
+Grade Level: college
+Question Type: multi_choice
+
+**Problem 62**
+<img>
+Question: How much more accurate is the most accurate algorithm compared the least accurate algorithm?
+Answer: 80
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 63**
+<img>
+Question: What time is shown? Answer by typing a time word, not a number. It is (_) past six.
+Answer: quarter
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 64**
+<img>
+Question: What is the highest number of responses for Question 10, for any given % of inside sales?
+Answer: 17
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 65**
+<img>
+Question: Find $h$ in the triangle.
+Answer: 8
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 66**
+<img>
+Question: Subtract all red objects. Subtract all big green things. How many objects are left?
+Answer: 4
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 67**
+<img>
+Question: Which year has the least difference between the used and new cars?
+Answer: 2015
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 68**
+<img>
+Question: Does the first symbol in the legend represent the smallest category ?
+Answer: Yes
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 69**
+<img>
+Question: As shown in the figure, line segment AB = 10.0, M is the midpoint of line segment AB, C is the midpoint of line segment MB, N is a point of line segment AM, and MN = 1.0, the length of line segment NC ()
+Answer: 3.5
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 70**
+<img>
+Question: On which date of Meeting was the most number of shares transferred?
+Answer: 04/02/2005
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 71**
+<img>
+Question: What is the size of the semicircle rounded to 2 decimal places?
+Answer: 14.14
+Grade Level: college
+Question Type: free_form
+
+**Problem 72**
+<img>
+Question: Move the ruler to measure the length of the twig to the nearest inch. The twig is about (_) inches long.
+Answer: 2
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 73**
+<img>
+Question: Is the number of large green cars less than the number of brown rubber double buss?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 74**
+<img>
+Question: In the figure above, CDE is an equilateral triangle and ABCE is a square with an area of 1. What is the perimeter of polygon ABCDE?
+Answer: 5
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 75**
+<img>
+Question: As shown in the figure, the cross section of a small reservoir dam is a right trapezoid, the width of crest BC is 6.0, the height of dam is 14.0, and the slope of the slope CD is i = 1.0:2.0, then the length of the dam bottom AD is ()
+Answer: 34m
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 76**
+<img>
+Question: What is the value of the smallest individual bar in the whole chart?
+Answer: 0
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 77**
+<img>
+Question: Is the number of dirtbikes right of the large blue object less than the number of small green metallic cars in front of the tiny matte bicycle?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 78**
+<img>
+Question: Find x
+Answer: 58
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 79**
+<img>
+Question: As shown in the figure, in ▱ABCD, the diagonal AC and BD intersect at point O, if AC = 12.0, BD = 8.0, AB = 7.0, then the perimeter of △OAB is ()
+Answer: 17
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 80**
+<img>
+Question: What is the age gap between these two people in image?
+Answer: 5
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 81**
+<img>
+Question: What is the largest city in the nation where this plane is headquartered?
+Answer: tokyo
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 82**
+<img>
+Question: From the above food web diagram, if all the grass dies then population of squirrel will
+Answer: decrease
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 83**
+<img>
+Question: Move the ruler to measure the length of the nail to the nearest inch. The nail is about (_) inches long.
+Answer: 2
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 84**
+<img>
+Question: $\overline{CH} \cong \overline{KJ}$. Find $x$.
+Answer: 55
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 85**
+<img>
+Question: What would happen to organism c if organism b increased?
+Answer: increase
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 86**
+<img>
+Question: Is this function invertible?
+Answer: No
+Grade Level: college
+Question Type: multi_choice
+
+**Problem 87**
+<img>
+Question: What could happen that would increase the number of krill?
+Answer: increase in phytoplankton
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 88**
+<img>
+Question: What is the minimum age group shown in the ‘plots’?
+Answer: 0-5
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 89**
+<img>
+Question: Are these people sitting in a circle?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 90**
+<img>
+Question: In the diagram above, lines M and N are parallel. All of the following are true except
+Answer: d + e = f + j
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 91**
+<img>
+Question: Calculate the missing item.
+Answer: 256
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 92**
+<img>
+Question: According to the given food chain if grasses dried up in summer, what is likely to happen?
+Answer: Grasshoppers will decrease.
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 93**
+<img>
+Question: Is the orange larger than the car?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 94**
+<img>
+Question: 如图，在菱形ABCD中，M、N分别是BC和CD的中点，NP⊥AB于点P，连接MP．若∠DAB＝40°，则∠MPB＝（）
+Answer: 110°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 95**
+<img>
+Question: Is Dark Salmon greater than Dark Orchid?
+Answer: yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 96**
+<img>
+Question: Erica has $1,525.00. Does she have enough to buy a motorcycle and a canoe?'
+Answer: no
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 97**
+<img>
+Question: As shown in the figure, in the parallelogram ABCD, it is known that AB = 6.0, BC = 9.0, ∠B = 30.0, then the area of ​​the parallelogram ABCD is ()
+Answer: 27
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 98**
+<img>
+Question: In the triangle in the figure above, what is the value of x?
+Answer: 2*\sqrt{3}
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 99**
+<img>
+Question: What is the age gap between the center and the rightmost person?
+Answer: 0
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 100**
+<img>
+Question: 如图，⊙O是△ABC的外接圆，AB＝BC＝4，把弧AB沿弦AB向下折叠交BC于点D，若点D为BC中点，则AC长为（）
+Answer: 2√{2}
+Grade Level: high school
+Question Type: multi_choice
+

@@ -1,0 +1,301 @@
+Here are the proposed difficulty control techniques for each problem:
+
+**Problem 1**
+Difficulty Control: The problem asks for the sum of values within a stacked bar. To make it easier, ask for the value of a single, clearly delineated segment within a bar (e.g., "What is the value of 'leaf' in the 'nod' group?"). To make it harder, ask for the sum of a specific category across all bars (e.g., "What is the total sum for the 'loop' category?") or increase the number of segments and bars.
+
+**Problem 2**
+Difficulty Control: The problem asks to identify the smallest value from a bar chart. To make it easier, use fewer bars and make the difference in heights more pronounced. To make it harder, increase the number of bars and make their heights very similar, requiring more careful visual inspection.
+
+**Problem 3**
+Difficulty Control: The problem requires calculating the tangent of an angle in a triangle on a grid. To make it easier, align the triangle's legs with the grid lines so the lengths can be counted directly. To make it harder, change the coordinates of the vertices (A, B, C) to require the use of the distance formula and the law of cosines, or position them such that calculating the slope requires using subtraction of coordinates.
+
+**Problem 4**
+Difficulty Control: The problem involves counting objects with specific attributes in an image. To make it easier, ask to count a more obvious set of objects (e.g., "How many doors are there?") or use an image with fewer, more distinct objects. To make it harder, use an image with more objects, some of which may be partially obscured, and add more specific criteria (e.g., "count the panes in the top row of the leftmost door").
+
+**Problem 5**
+Difficulty Control: The problem requires interpreting a frequency table. To make it easier, ask for a single frequency value from the table (e.g., "How many players scored exactly 3 runs?"). To make it harder, ask for a calculation that involves all the data, such as the mean, median, or mode of the runs scored.
+
+**Problem 6**
+Difficulty Control: The problem asks for the scale factor of a dilation. The difficulty is controlled by the numbers used for the lengths. To make it easier, use small, integer lengths that result in an integer scale factor. To make it harder, use fractional or decimal lengths that result in a non-integer scale factor.
+
+**Problem 7**
+Difficulty Control: The problem requires reading and summing two values from a bar chart. To make it easier, ask for a single value. To make it harder, ask for the average or range of all values in the chart, and increase the number of bars.
+
+**Problem 8**
+Difficulty Control: The problem requires external knowledge (ages of people). The difficulty is controlled by the fame of the individuals. To make it easier, use well-known figures from different generations. To make it harder, use less famous people or individuals who are very close in age.
+
+**Problem 9**
+Difficulty Control: The problem asks for the highest value in a line chart. To make it easier, use a chart with a very obvious single peak. To make it harder, create a chart with multiple points very close to the maximum value, or ask for the difference between the highest and lowest values (the range).
+
+**Problem 10**
+Difficulty Control: The problem requires external knowledge (birth years of historical figures). To make it easier, use figures from an era far removed from the reference date (e.g., asking if someone from the 1800s was born after WWII). To make it harder, use figures born very close to the reference date.
+
+**Problem 11**
+Difficulty Control: The problem involves counting data points that satisfy a condition. To make it easier, change the condition to a simpler one (e.g., "accuracies equal to 4"). To make it harder, make the condition a range (e.g., "accuracies between 3 and 7") and use non-integer values that require careful reading between grid lines.
+
+**Problem 12**
+Difficulty Control: The problem asks for a comparison between two bars. To make it easier, ensure the difference in bar lengths is large and obvious. To make it harder, make the bar lengths very similar, requiring precise reading of the chart.
+
+**Problem 13**
+Difficulty Control: The problem asks to find the year corresponding to the minimum value on a line chart. To make it easier, ensure the minimum is a single, distinct point. To make it harder, have the chart contain a plateau with multiple years at or near the minimum value.
+
+**Problem 14**
+Difficulty Control: This is a multi-step data interpretation problem. To make it easier, simplify the question by providing the average value (e.g., "The average for Canada was 0.6%. In how many years was the value greater than the average?"). To make it harder, add more data points for each category, making the calculation of the average more tedious.
+
+**Problem 15**
+Difficulty Control: The problem asks for the range of a set of data in a table. To make it easier, use fewer data points and smaller, whole numbers. To make it harder, increase the number of data points and use larger numbers, decimals, or fractions.
+
+**Problem 16**
+Difficulty Control: The problem asks to find the maximum value in a grouped bar chart. To make it easier, ask for the maximum value within a single category (e.g., "in the 'lake' category"). To make it harder, ask for a comparison between the maximums of different categories (e.g., "What is the difference between the most preferred 'drawn' object and the most preferred 'nerve' object?").
+
+**Problem 17**
+Difficulty Control: The problem asks to identify the degree of a function from its graph. To make it easier, show a simpler function like a line (degree 1). To make it harder, show a higher-degree polynomial (e.g., a cubic or quartic function) and ask for its minimum possible degree.
+
+**Problem 18**
+Difficulty Control: This is a logic-based counting problem with multiple attributes. To make it easier, reduce the number of criteria (e.g., "Subtract all red objects"). To make it harder, increase the number of objects and the complexity of the attributes (e.g., "Subtract all large, matte, red objects that are not cubes").
+
+**Problem 19**
+Difficulty Control: The problem asks to identify the smallest value from a horizontal bar chart. To make it easier, use fewer bars with large differences in length. To make it harder, increase the number of bars and make their lengths very similar.
+
+**Problem 20**
+Difficulty Control: This is a circle geometry problem. The difficulty is controlled by the given information. To make it easier, give an inscribed angle and ask for the opposite angle in the cyclic quadrilateral. To make it harder, provide an angle that requires more intermediate steps or theorems to find the solution.
+
+**Problem 21**
+Difficulty Control: The problem uses circle theorems. To make it easier, provide the central angle (∠AOB) and ask for the inscribed angle (∠ACB), which is a direct one-step calculation. To make it harder, introduce other elements like tangents or additional chords and ask for an angle that requires combining multiple geometric properties.
+
+**Problem 22**
+Difficulty Control: This is a logic-based counting problem. To make it easier, use fewer objects and simpler exclusion criteria (e.g., "Subtract all blue objects"). To make it harder, add more objects with subtle variations in color, size, and texture, and use more complex, overlapping criteria.
+
+**Problem 23**
+Difficulty Control: The problem asks to identify a property of a function graph. To make it easier, ask a more direct question like "What is the value of f(4)?". To make it harder, show a more complex function (like y = cos(x)) and ask if it's even, or show a function that is neither even nor odd and ask for its classification.
+
+**Problem 24**
+Difficulty Control: The problem asks to identify a property of a function graph. To make it easier, show a clear example of a periodic function (like a sine wave) and ask if it's periodic. To make it harder, ask for the period of a complex periodic function or show a function that is "almost" periodic to test the student's understanding of the definition.
+
+**Problem 25**
+Difficulty Control: The problem involves generating a chain code for a shape. To make it easier, use a simpler, smaller shape with fewer direction changes (e.g., a simple rectangle). To make it harder, use a larger, more complex shape with many changes in direction.
+
+**Problem 26**
+Difficulty Control: The problem involves converting a digital time to words. To make it easier, use a time on the hour (e.g., 3:00). To make it harder, use a time that is not a multiple of 5 (e.g., 3:17) or ask the question using an analog clock.
+
+**Problem 27**
+Difficulty Control: The problem asks to identify the maximum value in a bar chart. To make it easier, ensure the maximum bar is significantly taller than all others. To make it harder, make several bars have heights very close to the maximum, requiring careful inspection.
+
+**Problem 28**
+Difficulty Control: This is a multi-step circle geometry problem. To make it easier, break the problem down by first asking for an intermediate angle (e.g., "Find ∠ABC"). To make it harder, provide the angles as algebraic expressions and ask to solve for a variable.
+
+**Problem 29**
+Difficulty Control: The problem involves reading a value from a text-based table. To make it easier, use a table with fewer rows and columns. To make it harder, use a much larger table and ask to find a value that is not at the beginning or end, requiring more careful scanning.
+
+**Problem 30**
+Difficulty Control: The problem requires checking multiple bars against a condition. To make it easier, lower the threshold (e.g., "higher than 3"). To make it harder, ask a question requiring calculation, like "For which algorithm ('clergy' or 'scar') is the sum of accuracies higher?".
+
+**Problem 31**
+Difficulty Control: The problem requires comparing multiple lines on a graph. To make it easier, use fewer lines and have one line that is clearly higher than the others across the entire graph. To make it harder, use more lines that intersect frequently, requiring the question to be more specific (e.g., "Which model is best at 2x10^5 train steps?").
+
+**Problem 32**
+Difficulty Control: The problem tests the concept of concentration. To make it easier, keep the solvent volume constant and vary the number of solute particles, as shown. To make it harder, vary both the solvent volume and the number of solute particles, requiring the calculation and comparison of ratios.
+
+**Problem 33**
+Difficulty Control: The problem involves reading a ruler. To make it easier, use an object whose length aligns perfectly with one of the whole-inch marks. To make it harder, use an object whose length falls between the marks, requiring estimation or knowledge of fractions of an inch.
+
+**Problem 34**
+Difficulty Control: The problem relies on recognizing an equilateral triangle from its angles. To make it easier, state that the triangle is equilateral. To make it harder, provide the angles as algebraic expressions (e.g., 3x, 3x) and ask to solve for x before finding the side length.
+
+**Problem 35**
+Difficulty Control: This is a conceptual question about properties of functions. To make it easier, ask a more concrete question related to the graph, like "Is the point (0, 5) in the epigraph of this function f if f(0)=2?". To make it harder, ask about the properties of the epigraph itself, such as its convexity.
+
+**Problem 36**
+Difficulty Control: The problem uses the property that equal angles in a triangle imply equal opposite sides. To make it easier, use a simpler algebraic expression (e.g., z-15). To make it harder, use quadratic expressions for the side lengths or provide the perimeter and ask to solve for the sides.
+
+**Problem 37**
+Difficulty Control: The problem requires interpreting a food web. To make it easier, ask about a direct, single-step relationship (e.g., "What does the red squirrel eat?"). To make it harder, ask about second or third-order effects (e.g., "What would happen to the Red Oak population if the Fiery Searcher Beetle population increased?").
+
+**Problem 38**
+Difficulty Control: This is a multi-step geometry problem involving similar triangles and the Pythagorean theorem. To make it easier, provide the length of side PR directly, removing the need for the Pythagorean theorem. To make it harder, provide the lengths as variables and ask for the answer as an expression.
+
+**Problem 39**
+Difficulty Control: The problem asks to identify the minimum value in a chart where one value is zero. To make it easier, have all bars be non-zero and have one be clearly shorter. To make it harder, make multiple bars have very low, similar non-zero values.
+
+**Problem 40**
+Difficulty Control: The problem requires external knowledge about the ages of public figures. The difficulty is controlled by how well-known the individuals are. Using more obscure figures makes the problem harder.
+
+**Problem 41**
+Difficulty Control: The problem requires filtering and counting rows in a table. To make it easier, use a smaller table or a simpler condition (e.g., "models with size of 6B"). To make it harder, ask a question that requires aggregating data, such as "Which creator has the largest total model size for all their models listed?".
+
+**Problem 42**
+Difficulty Control: The problem involves solving for angles in a trapezoid. To make it easier, provide the value of x and ask for the measure of angle A. To make it harder, use more complex algebraic expressions for the angles.
+
+**Problem 43**
+Difficulty Control: This is a counting problem in an image. To make it easier, use an image where the items to be counted are clearly separated. To make it harder, use an image where the items are overlapping and jumbled together, requiring more careful observation.
+
+**Problem 44**
+Difficulty Control: The problem asks for a visual estimation of the area under several curves. To make it easier, ask to compare the values of the functions at a single point (e.g., "Which line has the highest value at x=100?"). To make it harder, use curves that cross multiple times and have very similar areas.
+
+**Problem 45**
+Difficulty Control: This is a simple word problem involving addition. To make it easier, ask for the price of a single item. To make it harder, ask a multi-step question involving multiplication and subtraction (e.g., "How much change would you get from $50 if you bought two steaks and one pizza?").
+
+**Problem 46**
+Difficulty Control: This is a college-level physics problem. To make it easier, provide the necessary formula (the Clausius-Clapeyron equation) and ensure all values are in consistent units. To make it harder, require the student to know or derive the formula and provide values in mixed units that need conversion.
+
+**Problem 47**
+Difficulty Control: This is a college-level orbital mechanics problem. To make it easier, ask a question about a simple circular orbit (e.g., "What is the orbital speed?"). To make it harder, ask a question involving a transfer orbit or a change in orbital parameters, as in the original problem.
+
+**Problem 48**
+Difficulty Control: This is a complex visual counting and comparison problem. To make it easier, simplify the criteria for each group of objects (e.g., "Is the number of green objects greater than the number of yellow objects?"). To make it harder, add more attributes to the criteria and more objects to the scene.
+
+**Problem 49**
+Difficulty Control: Another logic-based counting problem. To make it easier, use fewer objects and simpler exclusion criteria. To make it harder, increase the number of objects and make the criteria more complex and specific.
+
+**Problem 50**
+Difficulty Control: The problem involves using the area formula for a part of a circle. To make it easier, give the radius/diameter and ask for the area. To make it harder, give the arc length in addition to the area and ask for the radius and central angle of a general sector.
+
+**Problem 51**
+Difficulty Control: This is a logic-based counting problem. To make it easier, simplify the criteria (e.g., "Subtract all green things"). To make it harder, use more specific and overlapping categories (e.g., "Subtract all shiny spheres and matte cubes").
+
+**Problem 52**
+Difficulty Control: This is an advanced problem about infinite circuits. To make it easier, use a finite circuit with only 2 or 3 repeating sections. To make it harder, change the resistor values in the repeating unit (e.g., use R and 2R).
+
+**Problem 53**
+Difficulty Control: The problem involves reading a grouped bar chart and applying a condition. To make it easier, use a lower, integer threshold that aligns with grid lines. To make it harder, ask a more complex question, like "How many categories have a total number of people greater than 15?".
+
+**Problem 54**
+Difficulty Control: This problem combines counting with spatial reasoning. To make it easier, ask a simple counting question without the spatial element (e.g., "Are there more cars than planes?"). To make it harder, use more ambiguous spatial relationships and more complex object criteria.
+
+**Problem 55**
+Difficulty Control: This geometry problem involves reflections and angle properties. The difficulty is controlled by the main angle (∠BAC). To make it easier, use a familiar angle like 90° or 120°. To make it harder, provide the angle as an algebraic expression and ask to solve for a variable.
+
+**Problem 56**
+Difficulty Control: This problem uses properties of angle bisectors and the area of a triangle. The difficulty can be controlled by the given numbers. To make it easier, use small integers for all given lengths. To make it harder, use fractions or radicals for the given lengths.
+
+**Problem 57**
+Difficulty Control: The problem is a direct application of the Pythagorean theorem using areas. To make it easier, provide the side lengths instead of the areas. To make it harder, use much larger numbers or algebraic expressions for the areas.
+
+**Problem 58**
+Difficulty Control: The problem requires reading a stem-and-leaf plot. To make it easier, ask for the number of bags in a single stem (e.g., "in the 50s"). To make it harder, ask for the median or mean of the entire dataset.
+
+**Problem 59**
+Difficulty Control: A logic-based counting problem. To make it easier, simplify the criteria for removal. To make it harder, increase the number of objects and the complexity of the criteria.
+
+**Problem 60**
+Difficulty Control: This problem requires understanding the relationship between a function's graph and its derivative. To make it easier, ask about the value of the function itself in that interval. To make it harder, ask about the second derivative (concavity).
+
+**Problem 61**
+Difficulty Control: This is another age-gap question requiring external knowledge. The difficulty depends entirely on the fame of the historical figures depicted.
+
+**Problem 62**
+Difficulty Control: This problem requires finding the max and min values in one data series on a bar chart and then finding their difference. To make it easier, ask for just the highest or lowest value. To make it harder, ask to compare the ranges of the male and female data series.
+
+**Problem 63**
+Difficulty Control: The problem involves interpreting base-ten blocks. To make it easier, use only tens or only ones. To make it harder, introduce hundreds blocks and create a larger number.
+
+**Problem 64**
+Difficulty Control: This is a line chart interpretation question. To make it easier, ask for the value at a specific week. To make it harder, ask for the week with the greatest *increase* in weight, which requires calculating differences between consecutive points.
+
+**Problem 65**
+Difficulty Control: This problem involves reading a stem-and-leaf plot and counting entries above a certain value. To make it easier, use a smaller dataset (fewer leaves). To make it harder, ask for a percentile rank.
+
+**Problem 66**
+Difficulty Control: This is a definition-based question. Difficulty is controlled by the subtlety of the definitions. To make it easier, provide options that are visually very different. To make it harder, provide options that are very similar, requiring precise knowledge of the terminology.
+
+**Problem 67**
+Difficulty Control: Similar to the previous problem, this is definition-based. To make it easier, ask to identify a very distinct shape like "entire". To make it harder, ask to differentiate between very similar shapes like "serrate" and "doubly serrate".
+
+**Problem 68**
+Difficulty Control: This is a word problem involving multiplication with a mixed number. To make it easier, use a whole number for the weight (e.g., "2 kilograms"). To make it harder, use a more complex fraction or decimal for the weight.
+
+**Problem 69**
+Difficulty Control: This is a trigonometry word problem. The difficulty is controlled by the given angles and distances. To make it easier, use angles like 30°, 45°, or 60° so the trigonometric ratios are well-known exact values. To make it harder, use less common angles that require a calculator.
+
+**Problem 70**
+Difficulty Control: This is a circle geometry problem. To make it easier, provide the central angle (∠BOC) and ask for the inscribed angle (∠BAC). To make it harder, provide information that requires more steps, such as the length of a chord and the radius, and ask for an angle.
+
+**Problem 71**
+Difficulty Control: This problem involves setting up and solving equations based on the properties of parallel lines. To make it easier, provide simpler linear expressions (e.g., y and y+2). To make it harder, use a system of two variables (x and y) that must be solved simultaneously.
+
+**Problem 72**
+Difficulty Control: The problem is to read an analog clock. To make it easier, use a time on the hour. To make it harder, use a time where the hour hand is between numbers and the minute hand is not on a multiple of 5 (e.g., 4:38).
+
+**Problem 73**
+Difficulty Control: This problem involves the area of a rhombus. To make it easier, give the lengths of the diagonals and ask for the area. To make it harder, provide the area and the perimeter, requiring a system of equations to be solved.
+
+**Problem 74**
+Difficulty Control: The problem uses Pitot's theorem for tangential quadrilaterals. To make it easier, provide three side lengths and ask for the fourth. To make it harder, provide the side lengths as algebraic expressions.
+
+**Problem 75**
+Difficulty Control: This is a complex geometry problem involving similar right triangles. To make it easier, provide more side lengths to reduce the number of steps needed. To make it harder, provide fewer initial values, requiring a longer chain of deductions.
+
+**Problem 76**
+Difficulty Control: The problem involves a chord and the radius of a circle, which forms a right triangle. To make it easier, use numbers that form a simple Pythagorean triple (like a 6-8-10 triangle instead of 8-x-10, where the radius is 5). To make it harder, provide the distance from the center and the radius, and ask for the length of the chord.
+
+**Problem 77**
+Difficulty Control: This is a spatial reasoning problem involving folding a net into a cube. To make it easier, use a simpler pattern on the faces (e.g., just colors, no numbers). To make it harder, use more complex symbols and orientations on the faces.
+
+**Problem 78**
+Difficulty Control: The problem involves reading a table and finding the best (highest or lowest) score. To make it easier, ask for a specific value from the table (e.g., "What is the PSNR score for DMTET on Chair?"). To make it harder, ask for the object with the largest *difference* in PSNR score between the two methods.
+
+**Problem 79**
+Difficulty Control: This is a food chain interpretation problem. To make it easier, ask about a direct effect (e.g., "What does the grasshopper eat?"). To make it harder, ask about an indirect effect (e.g., "What would happen to the grasshopper if the owl population decreased?").
+
+**Problem 80**
+Difficulty Control: The problem asks for an interior angle of a regular polygon. To make it easier, use a simpler polygon like a square or equilateral triangle. To make it harder, use a polygon with more sides (e.g., a decagon) or ask for the sum of the interior angles.
+
+**Problem 81**
+Difficulty Control: This is a simple observation question. To make it harder, one could ask a question requiring more judgment, like "Is this pizza more than 50% covered with toppings?".
+
+**Problem 82**
+Difficulty Control: This is a simple observation question. To make it harder, show a partially obscured sun and ask for an estimation of the percentage showing.
+
+**Problem 83**
+Difficulty Control: The problem is based on the property that congruent arcs in a circle have congruent chords. To make it easier, set the expressions equal to simple numbers. To make it harder, use more complex expressions, such as quadratic equations.
+
+**Problem 84**
+Difficulty Control: The problem asks to find the minimum value on a bar chart. To make it easier, use fewer bars with large differences in height. To make it harder, use more bars with heights that are very close to each other.
+
+**Problem 85**
+Difficulty Control: A circle geometry problem. To make it easier, give the inscribed angle (∠C) and ask for the central angle (∠AOB, which isn't drawn but is related to ∠BOC). To make it harder, provide arc lengths instead of angles.
+
+**Problem 86**
+Difficulty Control: This problem is an application of the Pythagorean theorem. To make it easier, use numbers that result in a Pythagorean triple (e.g., pull up the midpoint by 3cm when half the length is 4cm, resulting in a hypotenuse of 5cm). To make it harder, use numbers that result in irrational lengths.
+
+**Problem 87**
+Difficulty Control: The problem requires comparing the areas of two regions bounded by curves. To make it easier, use simpler functions like lines and parabolas. To make it harder, use functions where the integrals are difficult to compute or visually estimate, and ask for the numerical difference in the areas.
+
+**Problem 88**
+Difficulty Control: This is a graph reading problem with a more technical context. To make it easier, ask for the value of one line at a specific λ2 value. To make it harder, ask for the value of λ2 where the two curves have the largest difference.
+
+**Problem 89**
+Difficulty Control: This is a basic division/grouping problem. To make it easier, use a smaller total number of dots. To make it harder, use a larger number of dots and groups.
+
+**Problem 90**
+Difficulty Control: The problem uses properties of parallel lines. To make it easier, ask for a vertically opposite or corresponding angle, which would be equal. To make it harder, provide the angles as algebraic expressions and ask to solve for a variable.
+
+**Problem 91**
+Difficulty Control: The problem asks to find the maximum point on a line graph. To make it easier, use fewer data points and a more obvious peak. To make it harder, have several points close to the maximum value, requiring careful reading of the labels.
+
+**Problem 92**
+Difficulty Control: A simple bar chart comparison. To make it easier, have the two bars being compared have a large difference in length. To make it harder, make their lengths very similar.
+
+**Problem 93**
+Difficulty Control: A food web interpretation problem. To make it easier, ask about a producer or primary consumer. To make it harder, ask about a tertiary consumer or an animal with multiple food sources and predators, requiring more complex analysis.
+
+**Problem 94**
+Difficulty Control: A college-level physics problem involving Coulomb's Law. To make it easier, use a simpler arrangement of charges (e.g., a line) or have only two charges. To make it harder, use a 3D arrangement of charges or ask for the electric field at a point instead of the force on a charge.
+
+**Problem 95**
+Difficulty Control: A basic division/grouping problem. To make it easier, use fewer dots and groups. To make it harder, increase the numbers involved.
+
+**Problem 96**
+Difficulty Control: This problem tests understanding of a constant function. To make it easier, ask for the value of f(any number). To make it harder, replace the constant function with a more complex one, like a step function, and ask to compare values in different steps.
+
+**Problem 97**
+Difficulty Control: This is a visual counting and comparison problem. To make it easier, ask a simple counting question (e.g., "How many buses are there?"). To make it harder, use more complex criteria and more objects in the scene.
+
+**Problem 98**
+Difficulty Control: This is a food web interpretation problem. To make it easier, ask about a direct link in the food chain. To make it harder, ask about an indirect effect that requires tracing through multiple links.
+
+**Problem 99**
+Difficulty Control: An age-gap question requiring external knowledge. Difficulty is controlled by the fame of the people in the picture.
+
+**Problem 100**
+Difficulty Control: This circle geometry problem involves finding the measure of a major arc. To make it easier, ask for a smaller, minor arc that is directly given or easily calculated (e.g., "Find m arc HI"). To make it harder, ask for the measure of an arc formed by a secant or tangent, requiring additional theorems.

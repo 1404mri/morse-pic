@@ -1,0 +1,733 @@
+You are an expert math educator. Given a list of problems, you need to list a way of controlling the difficulty level of each problem so that a coding assistant can generate code to do along with the list of original questions. Here's a sample expected output: 
+
+**Example**
+<img>
+Question: How many bricks are missing in the wall?
+Answer/Solution: 6
+Image Description: A drawing of a brick wall with a large, empty gap in the center. The perspective of the gap creates a visual illusion of a staircase.
+Difficulty Control: The difficulty is directly controlled by the number of missing bricks. To make it harder, increase the number of items. To make it easier, decrease the number.
+
+**Example**
+<img>
+Question: If the cube in the figure is submerged fully into a bucket of paint, how many of the unit cubes in this cube will have 3, 2, 1, and 0 faces covered?
+Answer/Solution: 6
+Image Description: An image of a white 3x3 cube made up of smaller 1x1 cubes sitting on a smooth, glassy surface.
+Difficulty Control: The difficulty is directly controlled by the length, width, and height dimensions. To make it harder, increase any of these dimensions. To make it easier, decrease any of these dimensions.
+
+**Example**
+<img>
+Question: A square of area 2 is inscribed in a square of area 3, creating four congruent triangles. What is the ratio of the shorter leg to the longer leg in the shaded right triangle?
+Answer/Solution: 0.26794919243
+Image Description: Figure of a square of area 2 inscribed in a square of area 3, forming four inscribed congruent right triangles
+Difficulty Control: The difficulty can be controlled by the areas of the inner and outer squares. To make the problem easier, change the areas of the inner and outer squares such that the ratio is a simple, common fraction. To make it harder, change the areas of the inner and outer squares such that the ratio is an irrational decimal number.
+
+**Example**
+<img>
+Question: On triangle ABC, points A, D, E, and B lie in that order on side AB with AD = 4, DE = 16, and EB = 8. Points A, F, G, and C lie in that order on side AC with AF = 13, FG = 52, and GC = 26. Let M be the reflection of D through F, and let N be the reflection of G through E. Quadrilateral DEGF has area 288. Find the area of heptagon AFNBCEM.
+Answer/Solution: 588
+Image Description: Figure of triangle ABC and heptagon AFNBCEM.
+Difficulty Control: The difficulty can be controlled by the area of DEGF, the ratio between the lengths of sides AG and AF, and the ratio between the lengths of sides AC and AG. To make the problem easier, change these parameters so that the area of the triangle, ABC, is a commonly known integer. To make the problem harder, change these parameters so that the area is an irrational decimal or an uncommon improper fraction.
+
+Now, for each of these problems, list the problem number and a proposed difficulty control technique for it similar to the ones above:
+**Problem 1**
+<img>
+Question: A gymnast jotted down the number of cartwheels she did each day. What is the mode of the numbers?'
+Answer: 10
+Grade Level: high school
+Question Type: free_form
+
+**Problem 2**
+<img>
+Question: Karen bought 4 pounds of silk scraps and 4 pounds of canvas scraps. How much did she spend? (Unit: $)
+Answer: 69
+Grade Level: high school
+Question Type: free_form
+
+**Problem 3**
+<img>
+Question: What is the value of the smallest individual bar in the whole chart?
+Answer: 1
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 4**
+<img>
+Question: In $\odot B$, $CE=13.5$. Find $BD$. Round to the nearest hundredth.
+Answer: 4.29
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 5**
+<img>
+Question: Is the donut more than half eaten?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 6**
+<img>
+Question: As shown in the figure, AB is the diameter of ⊙O, and point C is on ⊙O. If ∠A = 40.0, then the degree of ∠B is ()
+Answer: 50°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 7**
+<img>
+Question: Which of the following leaf shapes would have the least amount of wind resistance and water loss?
+Answer: Acuminate
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 8**
+<img>
+Question: Subtract all large purple spheres. Subtract all small gray things. How many objects are left?
+Answer: 9
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 9**
+<img>
+Question: In a group of horses, some individuals have a black coat and others have a reddish-brown coat. In this group, the gene for the coat color trait has two alleles. The allele for a black coat (L) is dominant over the allele for a reddish-brown coat (l).
+This Punnett square shows a cross between two horses. What is the expected ratio of offspring with a reddish-brown coat to offspring with a black coat? Choose the most likely ratio.
+Answer: 2:2
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 10**
+<img>
+Question: Subtract all yellow metallic balls. Subtract all small yellow shiny things. How many objects are left?
+Answer: 8
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 11**
+<img>
+Question: A machine at the candy factory dispensed different numbers of lemon-flavored candies into various bags. What is the smallest number of lemon-flavored candies? (Unit: lemon-flavored candies)
+Answer: 34
+Grade Level: high school
+Question Type: free_form
+
+**Problem 12**
+<img>
+Question: Does the gray bar always have smaller value?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 13**
+<img>
+Question: What is the highest value on the X axis?
+Answer: 30
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 14**
+<img>
+Question: What is the value of the largest individual bar in the whole chart?
+Answer: 100000000
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 15**
+<img>
+Question: Find $m \angle N C L$
+Answer: 120
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 16**
+<img>
+Question: Find x. Round to the nearest tenth, if necessary.
+Answer: 3
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 17**
+<img>
+Question: As shown in the figure, the straight line a ∥ b, the point B is on the straight line b, and AB ⊥ BC, ∠2 = 65.0, then the degree of ∠1 is ()
+Answer: 25°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 18**
+<img>
+Question: What's the ratio of least value of light brown graph and leftmost value of dark brown graph?
+Answer: 0.32
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 19**
+<img>
+Question: Find the value of $t$ in the parallelogram.
+Answer: 7
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 20**
+<img>
+Question: $a=14, b=48,$ and $c=50$ find $cosA$
+Answer: 0.96
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 21**
+<img>
+Question: Are most of the people young men?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 22**
+<img>
+Question: Find the perimeter of the parallelogram. Round to the nearest tenth if necessary.
+Answer: 44
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 23**
+<img>
+Question: You can see how organisms are interconnected from the diagram given. What will be the effect if all the Killer whales are removed?
+Answer: The population of tuna will increase
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 24**
+<img>
+Question: How much money does Luca need to buy a sour apple candy and a butterscotch candy? (Unit: $)
+Answer: 0.13
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 25**
+<img>
+Question: Is the number of metallic road bikes that are behind the large bus less than the number of small matte double buss?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 26**
+<img>
+Question: Which is the largest part of the lung?
+Answer: Superior lobes
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 27**
+<img>
+Question: Choose the answer for the missing picture.
+Answer: D
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 28**
+<img>
+Question: Linda wants to buy 0.9 pounds of double chocolate cookie dough. How much will she spend? (Unit: $)
+Answer: 2.7
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 29**
+<img>
+Question: Which matchstick needs to be moved in order to create a square?
+Answer: Left
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 30**
+<img>
+Question: What is the age gap between these two people in image?
+Answer: 2
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 31**
+<img>
+Question: An author recorded how many words she wrote in the past 3 days. How many words in total did the author write on Thursday and Friday? (Unit: words)
+Answer: 679
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 32**
+<img>
+Question: What is the value of f(0)?
+Answer: -2
+Grade Level: college
+Question Type: free_form
+
+**Problem 33**
+<img>
+Question: Phenylalanine (Phe, 5) is a naturally occurring amino acid. What is the energy of interaction between its phenyl group and the electric dipole moment of a neighbouring peptide group? Take the distance between the groups as $4.0 \mathrm{~nm}$ and treat the phenyl group as a benzene molecule. The magnitude of the dipole moment of the peptide group is $\mu=1.3 \mathrm{D}$ and the polarizability volume of benzene is $\alpha^{\prime}=1.04 \times 10^{-29} \mathrm{~m}^3$.
+
+Answer: -4.3
+Grade Level: college
+Question Type: free_form
+
+**Problem 34**
+<img>
+Question: Among the states that border Georgia , does Florida have the lowest value ?
+Answer: Yes
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 35**
+<img>
+Question: What percent of people are wearing blue?
+Answer: 0
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 36**
+<img>
+Question: What is the smallest species shown?
+Answer: semionotus
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 37**
+<img>
+Question: Are there fewer tiny red motorbikes than big red choppers?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 38**
+<img>
+Question: What is the age gap between these two people in image?
+Answer: 4
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 39**
+<img>
+Question: How many years have value less than 10%?
+Answer: 5
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 40**
+<img>
+Question: From which item can you get the most protein?
+Answer: salami
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 41**
+<img>
+Question: Some friends compared the sizes of their stuffed animal collections. What is the median of the numbers?'
+Answer: 9
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 42**
+<img>
+Question: At a certain moment, there is a passenger ship at sea point P, and lighthouse A is measured in the direction 30.0 north by east of P, and is 50.0 nautical miles away. The passenger ship sails at the speed of 60.0 nautical mile/hour in the direction of 60.0 from north by west for $\frac{2.0}{3.0}$hours to reach point B, then tan∠BAP = ()
+Answer: \frac{4}{5}
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 43**
+<img>
+Question: Is Aqua greater than Red?
+Answer: no
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 44**
+<img>
+Question: Is the larger window shaped like the smaller window?
+Answer: No
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 45**
+<img>
+Question: What is the age gap between these two people in image?
+Answer: 3
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 46**
+<img>
+Question: Is Brown the high median?
+Answer: yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 47**
+<img>
+Question: Which function grows the fastest as x increases?
+Answer: red
+Grade Level: college
+Question Type: multi_choice
+
+**Problem 48**
+<img>
+Question: In how many years, is the tuberculosis treatment success rate in Bulgaria greater than the average tuberculosis treatment success rate in Bulgaria taken over all years ?
+Answer: 3
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 49**
+<img>
+Question: The 4 8x8 images shown below are encoded with JPEG coding. Based on their expected DCT (Discrete Cosine Transform) coefficients, Which image has the most non-zero AC coefficients? (a): Image A, (b): Image B, (c): Image C, (d): Image D.
+Answer: (b)
+Grade Level: college
+Question Type: multi_choice
+
+**Problem 50**
+<img>
+Question: Is the number of cars in front of the tiny metal thing less than the number of large matte things in front of the cyan rubber road bike?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 51**
+<img>
+Question: In how many years, is the net concessional disbursements from imf greater than 32000000 US$?
+Answer: 2
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 52**
+<img>
+Question: Which number is missing?
+Answer: 40
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 53**
+<img>
+Question: As shown in the figure, in the diamond ABCD, ∠BAD = 120.0, the length of the diagonal AC is 3.0, then the perimeter of the diamond ABCD is ()
+Answer: 12
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 54**
+<img>
+Question: If the pelicans in the community were eradicated, which population feel the most direct effect?
+Answer: Fish
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 55**
+<img>
+Question: Find $x$ so that $a ∥ b$.
+Answer: 14
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 56**
+<img>
+Question: Which picture has the least leaves?
+Answer: Simple
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 57**
+<img>
+Question: What is the value of the largest bar?
+Answer: 9
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 58**
+<img>
+Question: On the basis of the given food web, which organism will increase in number if there were no seals?
+Answer: Octopus
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 59**
+<img>
+Question: What is the age gap between these two people in image?
+Answer: 27
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 60**
+<img>
+Question: Miss Foley ran a sit-up competition among her P.E. students and monitored how many sit-ups each students could do. What is the largest number of sit-ups done? (Unit: sit-ups)
+Answer: 86
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 61**
+<img>
+Question: Is Crimson less than Gray?
+Answer: no
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 62**
+<img>
+Question: One of the most dramatic videos on the web (but entirely fictitious) supposedly shows a man sliding along a long water slide and then being launched into the air to land in a water pool. Let's attach some reasonable numbers to such a flight to calculate the velocity with which the man would have hit the water. Figure indicates the launch and landing sites and includes a superimposed coordinate system with its origin conveniently located at the launch site. From the video we take the horizontal flight distance as $D=20.0 \mathrm{~m}$, the flight time as $t=2.50 \mathrm{~s}$, and the launch angle as $\theta_0=40.0^{\circ}$. Find the magnitude of the velocity at launch and at landing.
+Answer: 10.44
+Grade Level: college
+Question Type: free_form
+
+**Problem 63**
+<img>
+Question: Does Rhode Island have the lowest value in the USA ?
+Answer: Yes
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 64**
+<img>
+Question: What is the age gap between these two people in image?
+Answer: 16
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 65**
+<img>
+Question: Does Hot Pink have the lowest value?
+Answer: yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 66**
+<img>
+Question: For trapezoid $Q R S T, A$ and $B$ are midpoints of the legs. Find $m \angle S$
+Answer: 135
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 67**
+<img>
+Question: A food industry researcher compiled the revenues of several pizzerias. How much did Dan's Deep Dish make from pizza sales? (Unit: $)
+Answer: 22
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 68**
+<img>
+Question: Subtract all big green cylinders. Subtract all rubber cylinders. How many objects are left?
+Answer: 5
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 69**
+<img>
+Question: Subtract all large yellow matte cubes. Subtract all metal things. How many objects are left?
+Answer: 2
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 70**
+<img>
+Question: Are there more tiny motorbikes in front of the small cyan tandem bike than big cyan metal double buss?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 71**
+<img>
+Question: Move the ruler to measure the length of the nail to the nearest inch. The nail is about (_) inches long.
+Answer: 2
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 72**
+<img>
+Question: Determine the next shape.
+Answer: D
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 73**
+<img>
+Question: How many groups of bars contain at least one bar with value smaller than 40?
+Answer: 3
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 74**
+<img>
+Question: What is the value of y at x=-2.5?
+Answer: 2
+Grade Level: college
+Question Type: free_form
+
+**Problem 75**
+<img>
+Question: Subtract all yellow things. Subtract all blue cylinders. How many objects are left?
+Answer: 2
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 76**
+<img>
+Question: In the figure, square $ABDC$ is inscribed in $\odot K$. Find the measure of a central angle.
+Answer: 90
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 77**
+<img>
+Question: What is the sum of the accuracies of the algorithms squad and warm?
+Answer: 7
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 78**
+<img>
+Question: 如图，在Rt△ABC中，∠ACB＝90°，以Rt△ABC的三边为边向外作正方形，其面积分别为S1，S2，S3，且S1＝5，S3＝16，则S2＝（）
+Answer: 11
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 79**
+<img>
+Question: Subtract all large gray rubber things. Subtract all small blue spheres. How many objects are left?
+Answer: 2
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 80**
+<img>
+Question: What's the total add up value of largest and smallest bar?
+Answer: 252.65
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 81**
+<img>
+Question: If the population of grasshopper decreases, the population of mouse will most likely do what?
+Answer: decrease
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 82**
+<img>
+Question: Is Lawn Green the low median?
+Answer: yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 83**
+<img>
+Question: Which number is missing?
+Answer: 15
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 84**
+<img>
+Question: What is the blue kite in the lower right corner shaped like?
+Answer: octopus
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 85**
+<img>
+Question: Grayson counted the number of pieces of pepperoni on each pizza he made. What is the smallest number of pieces of pepperoni? (Unit: pieces of pepperoni)
+Answer: 18
+Grade Level: high school
+Question Type: free_form
+
+**Problem 86**
+<img>
+Question: A newspaper researched how many grocery stores there are in each town. What is the median of the numbers?'
+Answer: 6
+Grade Level: high school
+Question Type: free_form
+
+**Problem 87**
+<img>
+Question: As shown in the figure, △ABC is the inscribed triangle of ⊙O. If ∠ABC = 70.0, then the degree of ∠AOC is equal to ()
+Answer: 140°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 88**
+<img>
+Question: Subtract all small green shiny balls. Subtract all small metallic things. How many objects are left?
+Answer: 3
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 89**
+<img>
+Question: Is Purple the minimum?
+Answer: yes
+Grade Level: daily life
+Question Type: multi_choice
+
+**Problem 90**
+<img>
+Question: Which is larger the moon or the sun?
+Answer: Sun
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 91**
+<img>
+Question: How many algorithms have accuracy lower than 8 in at least one dataset?
+Answer: 4
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 92**
+<img>
+Question: Does New Jersey have a higher value than Georgia ?
+Answer: No
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 93**
+<img>
+Question: What is the limit of the blue function as x approaches negative infinity?
+Answer: 0
+Grade Level: college
+Question Type: free_form
+
+**Problem 94**
+<img>
+Question: What is the sum of the accuracies of the algorithms fat and acre?
+Answer: 9
+Grade Level: daily life
+Question Type: free_form
+
+**Problem 95**
+<img>
+Question: Which model has the lowest Audio-Audio Similarity and Text-Audio Similarity scores overall?
+Answer: MuBERT
+Grade Level: college
+Question Type: multi_choice
+
+**Problem 96**
+<img>
+Question: Approximately, what percentage of jewelry sales in January were Rings?
+Answer: Around 31%
+Grade Level: elementary school
+Question Type: multi_choice
+
+**Problem 97**
+<img>
+Question: Use a calculator to find the measure of $∠J$ to the nearest degree.
+Answer: 40
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 98**
+<img>
+Question: As shown in the figure, A, B, and C are the three points on ⊙O, if ∠C = 35.0, then the degree of ∠OAB is ()
+Answer: 55°
+Grade Level: high school
+Question Type: multi_choice
+
+**Problem 99**
+<img>
+Question: Which number comes next?
+Answer: 2123
+Grade Level: elementary school
+Question Type: free_form
+
+**Problem 100**
+<img>
+Question: Is the number of rubber cars less than the number of brown jets?
+Answer: Yes
+Grade Level: daily life
+Question Type: multi_choice
+

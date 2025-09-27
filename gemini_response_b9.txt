@@ -1,0 +1,301 @@
+Here are the difficulty control techniques for each problem:
+
+**Problem 1**
+Difficulty Control: The difficulty is controlled by the total number of objects, the number of distinct attributes (color, material, shape, size), and the number of subtraction steps. To make it easier, decrease the number of objects and use fewer, simpler criteria (e.g., "subtract all spheres"). To make it harder, increase the object count and the complexity of the subtraction criteria (e.g., "subtract all small shiny red spheres").
+
+**Problem 2**
+Difficulty Control: The difficulty can be controlled by the number of categories presented in the diagram and the subtlety of the visual differences between them. To make it easier, use fewer, more distinct categories. To make it harder, add more categories with very similar visual features.
+
+**Problem 3**
+Difficulty Control: The difficulty can be controlled by the measure of the inscribed angle (∠ABC). To make the problem easier, use simple integer values that are multiples of 10. To make it harder, use decimal values for the angle.
+
+**Problem 4**
+Difficulty Control: The difficulty is directly controlled by the total number of dots and the number of groups. To make it easier, use smaller numbers that correspond to common multiplication facts. To make it harder, increase the total number of dots.
+
+**Problem 5**
+Difficulty Control: The difficulty is controlled by the complexity of the object descriptions and the number of logical steps required. An easier question would involve simpler descriptions (e.g., "red cars" vs. "large red cars") and a direct comparison. A harder question involves more specific attributes and comparative clauses.
+
+**Problem 6**
+Difficulty Control: The difficulty is controlled by the number of data points (bars) and the complexity of the comparison. To make it easier, compare only two bars. To make it harder, ask for a calculation involving more bars (e.g., "Is the sum of the smallest three values greater than the largest two?").
+
+**Problem 7**
+Difficulty Control: The difficulty can be controlled by the nature of the question. To make it easier, ask for the value at a specific year (e.g., "What was the expenditure in 1978?"). To make it harder, ask for a range of time that satisfies a condition, as in the original question.
+
+**Problem 8**
+Difficulty Control: The difficulty is controlled by the complexity of the food web. To make it easier, ask about an organism that has a direct, one-to-one predator-prey relationship. To make it harder, create a more complex web with more organisms and ask about the indirect effects on an organism several links away.
+
+**Problem 9**
+Difficulty Control: The difficulty can be controlled by the given lengths for the triangle segments. To make the problem easier, use simple, whole numbers that result in a simple fraction. To make it harder, use decimal or fractional lengths that require more complex calculations.
+
+**Problem 10**
+Difficulty Control: The difficulty is controlled by the total number of objects, the number of distinct attributes, and the number of subtraction steps. To make it easier, reduce the number of objects and use simpler criteria. To make it harder, increase the object count and the complexity of the criteria.
+
+**Problem 11**
+Difficulty Control: The difficulty can be controlled by the visual subtlety of the comparison. To make it easier, make the size difference between the pictures very obvious. To make it harder, make the pictures closer in size.
+
+**Problem 12**
+Difficulty Control: The difficulty is primarily controlled by the external knowledge required. To make it easier, use a well-known historical event as a reference point. To make it harder, use a more obscure date or event, requiring more specific knowledge.
+
+**Problem 13**
+Difficulty Control: The difficulty is controlled by the visual separation of the data series. To make the problem easier, have the data series with the maximum area be visually distinct and far above the others. To make it harder, make several data series have very similar values, so their "area under the curve" is difficult to distinguish visually.
+
+**Problem 14**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the criteria for subtraction. Easier problems have fewer objects and simpler rules (e.g., "subtract all cubes"). Harder problems have more objects and multi-part rules (e.g., "tiny purple shiny cubes").
+
+**Problem 15**
+Difficulty Control: The difficulty is controlled by the complexity of the food web and the trophic distance between the two populations in question. An easier question would ask about a direct link (e.g., effect of zebras on cheetahs). A harder question, like this one, asks about an indirect effect that requires tracing the food chain through multiple steps.
+
+**Problem 16**
+Difficulty Control: The difficulty can be controlled by the given geometric parameters (angles, side lengths, radius). Using values from special right triangles (like 30-60-90) makes the problem easier. Using arbitrary angles or irrational side lengths makes it significantly harder.
+
+**Problem 17**
+Difficulty Control: The difficulty can be controlled by the years chosen for the ratio. To make it easier, select years where the values are identical (ratio is 1) or one is a simple multiple of the other. To make it harder, select years where the values are different and require division to find a decimal or fractional ratio.
+
+**Problem 18**
+Difficulty Control: The difficulty is controlled by the complexity of the mathematical pattern. To make it easier, use a simple arithmetic pattern (e.g., addition or subtraction across or diagonally). To make it harder, use a more complex pattern involving multiplication, division, or a combination of operations.
+
+**Problem 19**
+Difficulty Control: The difficulty is controlled by the threshold value in the question (e.g., "more than 3 units") and the number of categories (bars) on the chart. To make it easier, use a higher threshold (fewer items will qualify) or fewer categories. To make it harder, use a lower threshold or add more items to the chart.
+
+**Problem 20**
+Difficulty Control: The difficulty is controlled by the side lengths provided. To make it easier, provide side lengths that correspond to a special right triangle (e.g., 30-60-90 or 45-45-90), so the angle can be determined without a calculator. To make it harder, provide side lengths that require the use of inverse trigonometric functions (e.g., arctan) to find the angle.
+
+**Problem 21**
+Difficulty Control: The difficulty is controlled by the numbers assigned to the segments of the intersecting chords. To make it easier, use whole numbers that result in an integer answer for x. To make it harder, use decimals or fractions that require more complex calculations.
+
+**Problem 22**
+Difficulty Control: The difficulty is controlled by the type of chart and the question asked. For this stacked bar chart, asking for the smallest individual element is harder as it requires checking every sub-section. An easier question would be to ask for the total value of the smallest bar.
+
+**Problem 23**
+Difficulty Control: The difficulty is controlled by the size of the table and the type of query. A simple lookup for the highest value in a column is relatively easy. To make it harder, ask for a calculated value, such as the model with the highest average score or the standard deviation of a specific column.
+
+**Problem 24**
+Difficulty Control: The difficulty is controlled by the visual similarity of the data series. To make it easier, ensure the series with the maximum area is clearly higher than all others. To make it harder, plot multiple series with very close y-values, making a visual determination more challenging.
+
+**Problem 25**
+Difficulty Control: The difficulty is controlled by the quantity of the item purchased. To make it easier, use a whole number (e.g., "3 pounds"). To make it harder, use a mixed number (as in the original) or a decimal that results in a non-trivial multiplication.
+
+**Problem 26**
+Difficulty Control: The difficulty is controlled by the function defining the curve. The current function represents a semicircle, which can be solved using a geometric formula, making it easier. To make it harder, replace it with a function that requires actual calculus (integration) to find the area.
+
+**Problem 27**
+Difficulty Control: The difficulty can be controlled by the given values for the side length (AB) and the perimeter of the smaller triangle. To make it easier, use simple integers. The core geometric concept is the main source of difficulty, which remains constant.
+
+**Problem 28**
+Difficulty Control: The difficulty is controlled by the prices of the items. To make it easier, use round numbers or values that do not require "borrowing" for subtraction. To make it harder, use larger numbers or values with cents.
+
+**Problem 29**
+Difficulty Control: The difficulty is controlled by the prices of the items. To make it easier, use single-digit numbers or multiples of 10. To make it harder, use larger numbers that require "carrying" during addition, or include cents.
+
+**Problem 30**
+Difficulty Control: The difficulty is controlled by the given angle measures and the complexity of the geometric figure. An easier problem might involve a single angle bisector, while this one involves two bisectors and a perpendicular line, increasing the number of steps required.
+
+**Problem 31**
+Difficulty Control: The difficulty can be controlled by the measure of the given angle (∠ACD). Using a common angle like 30° or 45° can make intermediate calculations simpler. The geometric theorems required remain the main difficulty.
+
+**Problem 32**
+Difficulty Control: The difficulty is controlled by the complexity of the food chain. This example is a very simple, linear chain. To make it harder, embed this chain within a larger food web and ask about cascading effects.
+
+**Problem 33**
+Difficulty Control: The difficulty is controlled by the prices of the items. To make it easier, use smaller, rounded numbers. To make it harder, use larger, more specific numbers like those in the problem, which require careful addition.
+
+**Problem 34**
+Difficulty Control: The difficulty is controlled by the scale of the y-axis. A standard linear scale is easier to interpret. The use of a logarithmic scale, as in this chart, makes reading the values for the bars more difficult.
+
+**Problem 35**
+Difficulty Control: The difficulty is controlled by the given side lengths. Using simple integers is standard for this type of problem. The main difficulty lies in identifying the properties of the parallelogram and the isosceles triangle formed by the angle bisector.
+
+**Problem 36**
+Difficulty Control: The difficulty is controlled by the external knowledge required about the people in the image. Using highly famous individuals from a well-known time period makes it easier. Using less famous people or those from a less commonly studied era makes it harder.
+
+**Problem 37**
+Difficulty Control: The difficulty is controlled by the visual characteristics of the lines. "Roughest" implies the most change or variability. An easy question would have one line with many peaks and valleys while others are smooth. A hard question would feature lines with similar levels of variability.
+
+**Problem 38**
+Difficulty Control: The difficulty is controlled by the relationship between the given angle and the angle to be found. Asking for a corresponding or vertically opposite angle is easier. Asking for a consecutive interior angle, which requires subtraction from 180°, is slightly harder.
+
+**Problem 39**
+Difficulty Control: The difficulty is controlled by the complexity of the food web. To make it easier, choose an organism that is a food source for only one predator. To make it harder, choose an organism that is eaten by multiple predators, requiring the student to identify the one most dependent on it.
+
+**Problem 40**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the subtraction criteria. To make it easier, reduce the object count and simplify the rules (e.g., "subtract all shiny things"). To make it harder, increase the object count and use multi-part criteria.
+
+**Problem 41**
+Difficulty Control: The difficulty is controlled by the complexity of the pattern. The pattern here (sum of digits) is non-obvious. An easier problem would use a simple arithmetic or geometric sequence. A harder problem could involve a more obscure mathematical operation.
+
+**Problem 42**
+Difficulty Control: The difficulty is controlled by the value of x for which the function is to be evaluated. Asking for f(0) is often the easiest as it typically simplifies the expression (finding the y-intercept). Asking for f(x) at other integer or non-integer values would be harder.
+
+**Problem 43**
+Difficulty Control: The difficulty is controlled by the labeling of the axes. To make it easier, every grid line could be labeled. To make it harder, labels could be sparse, requiring the student to interpolate or deduce the scale, as in this example.
+
+**Problem 44**
+Difficulty Control: The difficulty is controlled by the complexity of the shape and the side lengths. An equilateral triangle with integer side lengths is very easy. A harder problem would involve an irregular polygon or side lengths that are fractions or decimals.
+
+**Problem 45**
+Difficulty Control: The difficulty is controlled by the external knowledge required. The age gap question depends on knowing the identities and birth years of the individuals pictured. Using more famous people or providing their names can make it easier.
+
+**Problem 46**
+Difficulty Control: The difficulty is controlled by the external knowledge required. The age gap question depends on knowing the identities and birth years of the individuals pictured. Using more famous people or providing their names can make it easier.
+
+**Problem 47**
+Difficulty Control: The difficulty is controlled by the given angle measures. The complexity of the problem stems from the multi-step reasoning required, combining properties of parallel lines. Using simpler angles (e.g., 90°) for ∠C could reduce calculation steps.
+
+**Problem 48**
+Difficulty Control: The difficulty is controlled by the number of data points and their values. To make it easier, use fewer data points and choose numbers that sum to a multiple of the count, making the final division straightforward. To make it harder, use more data points or numbers that result in a decimal mean.
+
+**Problem 49**
+Difficulty Control: The difficulty is controlled by the type of calculation requested. A simple value lookup is easiest. A sum of two values is harder. A question requiring finding a difference or an average across multiple categories would be even more difficult.
+
+**Problem 50**
+Difficulty Control: The difficulty is controlled by the question asked about the slope. A qualitative question ("positive", "negative", or "zero") is easier than a quantitative question ("What is the exact value of the slope at x=0?"), which would require calculus.
+
+**Problem 51**
+Difficulty Control: The difficulty is controlled by the complexity of the algebraic expressions for the angles. To make it easier, one angle could be a constant and the other a simple expression (e.g., 2x). To make it harder, both angles could be more complex expressions, leading to a multi-step algebraic equation.
+
+**Problem 52**
+Difficulty Control: The difficulty is controlled by the complexity of the food web. This web is relatively simple. To make it harder, add more organisms and connections, and ask about second or third-order effects of a population change.
+
+**Problem 53**
+Difficulty Control: The difficulty is controlled by the number of objects to be counted and the clarity of the image. To make it easier, have fewer objects (e.g., 4 trees total). To make it harder, add more trees or objects that could be ambiguously counted.
+
+**Problem 54**
+Difficulty Control: The difficulty is controlled by the number of prey and predators connected to the organism in question. The snake has multiple food sources and predators, making the outcome of its population decrease more complex and wide-ranging, which makes the problem harder.
+
+**Problem 55**
+Difficulty Control: The difficulty is controlled by the type of regular polygon. Polygons with more sides, or those less commonly studied like pentagons or heptagons, are harder than squares or equilateral triangles. The specific angle requested can also vary the difficulty.
+
+**Problem 56**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the subtraction criteria. To make it easier, reduce the object count and simplify the rules. To make it harder, increase the object count and use multi-part criteria involving size, color, and material.
+
+**Problem 57**
+Difficulty Control: The difficulty is controlled by the complexity and specificity of the object descriptions. Questions with multiple attributes (size, color, material, type, spatial relation) are harder than those with fewer attributes.
+
+**Problem 58**
+Difficulty Control: The difficulty is controlled by the length and commonality of the hidden word. A shorter, more common word is easier to find. A longer, more obscure word is harder.
+
+**Problem 59**
+Difficulty Control: The difficulty is controlled by the number of data points. To find the median, the data must be ordered. Using an odd number of data points makes finding the middle value easier. Using an even number requires an extra step of averaging the two middle values.
+
+**Problem 60**
+Difficulty Control: The difficulty is controlled by the external knowledge required. The age gap question depends on knowing the identities and birth years of the individuals pictured. Using more famous people or providing their names can make it easier.
+
+**Problem 61**
+Difficulty Control: The difficulty is controlled by the complexity of the question. Asking for the lowest value in a specific series ("blue bar") is easier than asking for the lowest value across the entire chart, which requires more comparisons.
+
+**Problem 62**
+Difficulty Control: The difficulty is controlled by the shape of the function. For a simple linear function like this one, comparing values is easy. To make it harder, use a curve with local maxima and minima, where the relationship between y-values is not monotonic.
+
+**Problem 63**
+Difficulty Control: The difficulty is controlled by the question asked. Identifying the x-coordinate of the local maximum from the graph of f(x) and its derivative f'(x) is a standard calculus question. A harder question might ask for the coordinates of an inflection point, which is less visually obvious.
+
+**Problem 64**
+Difficulty Control: The difficulty is controlled by the length of the line relative to the ruler markings. To make it easier, have the line end exactly on a centimeter mark. To make it harder, have it end between marks, requiring estimation, or ask for the measurement in a smaller unit (e.g., millimeters).
+
+**Problem 65**
+Difficulty Control: The difficulty is controlled by the clarity of the image and the visibility of the numbers. A high-resolution, clear image makes the task easier. A blurry or obstructed view makes it harder.
+
+**Problem 66**
+Difficulty Control: The difficulty is controlled by the length of the pencil relative to the ruler markings. To make it easier, have the pencil end exactly on an inch mark. To make it harder, have it end between marks and ask for measurement to the nearest half or quarter inch.
+
+**Problem 67**
+Difficulty Control: The difficulty is controlled by the complexity of the required calculation. This is a multi-step problem: calculate the average, then compare each data point to that average. A simpler question would be a direct lookup or a comparison between two points.
+
+**Problem 68**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the subtraction criteria. To make it easier, reduce the object count and simplify the rules. To make it harder, increase the object count and use multi-part criteria involving size, color, and material.
+
+**Problem 69**
+Difficulty Control: The difficulty is controlled by the visual separation of the data series. When one line is consistently above the other, the question is easy. To make it harder, have the lines be very close together or cross each other.
+
+**Problem 70**
+Difficulty Control: The difficulty can be controlled by the given angle value. Using a value like 90° would be easiest. The core difficulty lies in knowing the relationship between alternate interior angles and angles on a straight line.
+
+**Problem 71**
+Difficulty Control: The difficulty is controlled by the ambiguity in the cartoon's perspective and scale. To make it easier, the boy could be drawn obviously too short or tall. To make it harder, their relative sizes could be drawn to make the answer less certain.
+
+**Problem 72**
+Difficulty Control: The difficulty is controlled by the complexity of the object descriptions and the number of objects to be counted for each category. Simpler descriptions and fewer objects make the problem easier.
+
+**Problem 73**
+Difficulty Control: The difficulty is controlled by the complexity of the function graphed. This logarithmic function has a simple, single zero. A harder problem would feature a polynomial with multiple, non-integer zeros.
+
+**Problem 74**
+Difficulty Control: The difficulty is controlled by the complexity of the object descriptions. Using multiple adjectives for each object type increases the cognitive load and makes the problem harder than using simple descriptions.
+
+**Problem 75**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the subtraction criteria. To make it easier, reduce the object count and simplify the rules. To make it harder, increase the object count and use multi-part criteria involving color, material, and shape.
+
+**Problem 76**
+Difficulty Control: The difficulty is controlled by the complexity of the question, which involves specific object attributes, spatial relationships ("behind"), and a comparison ("less than"). Simplifying any of these components (e.g., "Are there more biplanes than busses?") would make the problem easier.
+
+**Problem 77**
+Difficulty Control: The difficulty is controlled by the given angle measures. The problem's complexity comes from the multi-step reasoning needed, combining properties of parallel lines with the properties of a right-angled triangle.
+
+**Problem 78**
+Difficulty Control: The difficulty is controlled by the number of data points and their values. Finding the range is generally easy. To make it slightly harder, use more data points or include negative numbers. A significantly harder question would ask for a different statistical measure like the standard deviation.
+
+**Problem 79**
+Difficulty Control: The difficulty is controlled by the magnitude of the number being represented. Smaller numbers (using fewer blocks) are easier to count. Larger numbers, especially those with zero in one of the places (like this one), are slightly harder.
+
+**Problem 80**
+Difficulty Control: The difficulty is controlled by the complexity of the image. An image focused solely on the clock face is easy. An image with many other distracting numbers or text, or an unconventional clock face, would be harder.
+
+**Problem 81**
+Difficulty Control: The difficulty is controlled by the calculation required. Asking for a value in a single year is easy. Asking for the sum of multiple years, especially with decimal values, is harder.
+
+**Problem 82**
+Difficulty Control: The difficulty is controlled by the complexity of the spatial reasoning required. A simple lookup ("What is the value for Wyoming?") is easy. A question involving neighbors requires identifying all bordering states first, then performing the comparison, which is a harder, multi-step process.
+
+**Problem 83**
+Difficulty Control: The difficulty is controlled by the density and complexity of the chart. A simple bar chart is easier. This chart has multiple overlapping series for each category, which makes isolating the single highest point more challenging.
+
+**Problem 84**
+Difficulty Control: The difficulty is controlled by the complexity of the object descriptions in the comparison. Simpler descriptions ("cars" vs. "minivans") would make the question easier than the multi-attribute descriptions used.
+
+**Problem 85**
+Difficulty Control: The difficulty is controlled by the question type. Asking to find the single smallest percentage value on the chart requires comparing all 10 visible data points, making it slightly harder than a direct lookup of a specific category's value.
+
+**Problem 86**
+Difficulty Control: The difficulty is controlled by the given angle measures. The core difficulty lies in the multi-step application of triangle properties (angle sum theorem and properties of angle bisectors). Using simpler angles might reduce calculation errors.
+
+**Problem 87**
+Difficulty Control: The difficulty is controlled by the number of intervals and the numerical integration rule specified. The Midpoint Rule is of moderate difficulty. Using more intervals increases the amount of calculation. An easier problem would use the Trapezoidal Rule with fewer intervals. A harder problem would use Simpson's rule.
+
+**Problem 88**
+Difficulty Control: The difficulty is controlled by the external knowledge required about the people in the image. Using highly famous individuals makes it easier. Using less famous political figures, as in this case, makes it harder for a general audience.
+
+**Problem 89**
+Difficulty Control: The difficulty is controlled by the number of categories and series in the chart. To find the most preferred object, one must find the maximum value across all bars, which is a slightly more involved process than a simple data lookup.
+
+**Problem 90**
+Difficulty Control: The difficulty is controlled by the geometric property being tested. This problem relies on the property that a perpendicular diameter bisects a chord and its arc, which is a specific piece of knowledge. An easier problem might ask about a central angle corresponding to the given arc.
+
+**Problem 91**
+Difficulty Control: The difficulty is controlled by the number and type of functions displayed. With six different functions graphed, identifying which ones meet a specific criterion (no zeros) requires checking each one, making it harder than a graph with only one or two functions.
+
+**Problem 92**
+Difficulty Control: The difficulty is controlled by the complexity of the question, which involves specific object attributes, spatial relationships ("behind"), and a comparison ("less than"). Simplifying any of these components would make the problem easier.
+
+**Problem 93**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the subtraction criteria. To make it easier, reduce the object count and simplify the rules. To make it harder, increase the object count and use multi-part criteria involving size, color, material, and shape.
+
+**Problem 94**
+Difficulty Control: The difficulty is controlled by the relationship between the plotted lines. The question is easy if one line is always above the other. It becomes harder if the lines cross, as the comparison "Is Magenta greater than Web Maroon?" would depend on the specific x-value chosen.
+
+**Problem 95**
+Difficulty Control: The difficulty is controlled by the type of calculation and the values involved. Summing two decimal numbers is more difficult than summing two integers. An easier question would be to find the difference between the two bars.
+
+**Problem 96**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the subtraction criteria. To make it easier, reduce the object count and simplify the rules. To make it harder, increase the object count and use multi-part criteria.
+
+**Problem 97**
+Difficulty Control: The difficulty is controlled by the complexity of the functions being compared. This question compares a parabola to a constant value, which is relatively straightforward to analyze from the graph. A harder question would involve comparing two more complex, intersecting curves.
+
+**Problem 98**
+Difficulty Control: The difficulty is controlled by the ratio given for the angles. A simpler ratio (e.g., 1:2:3) would make the algebraic steps easier than the given 2:3:4 ratio. The number of geometric elements (multiple angles, two bisectors) also adds to the complexity.
+
+**Problem 99**
+Difficulty Control: The difficulty is controlled by the orientation of the vector relative to the curve. Estimating components is easier if the vector is nearly parallel or perpendicular to the tangent of the curve. The current orientation requires more careful visual projection, making it harder.
+
+**Problem 100**
+Difficulty Control: The difficulty is controlled by the number of objects and the complexity of the subtraction criteria. To make it easier, reduce the object count and simplify the rules. To make it harder, increase the object count and use multi-part criteria involving color, material, size, and shape.
