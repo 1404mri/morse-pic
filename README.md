@@ -1,339 +1,213 @@
-# MORSE-PIC: Mathematical Visual Question Generation System
+# MORSE-PIC ✨
 
-A DSPy-based system for generating programmatic mathematical visualizations with corresponding questions and ground truth answers. This system uses Vision Language Models (VLMs) to generate Python code that creates mathematical images and calculates answers programmatically.
+MORSE-PIC (Mathematical Oriented Reasoning & Synthetic Environment – Programmable Image Creator) is a DSPy-based coding agent that turns textual math questions into runnable Python programs which draw visualizations, compute ground-truth answers, and store metadata. You can use it interactively through the `MathVistaSystem` pipeline or run a standalone generator that writes the raw Python code to disk.
 
-## 🚀 Features
+---
 
-- **VLM-Powered Code Generation**: Uses DSPy signatures to generate complete Python visualization code
-- **Programmatic Ground Truth**: Calculates answers mathematically, not through AI inference
-- **Difficulty Scaling**: Unlimited difficulty levels with automatic complexity adjustments
-- **Multiple Image Contexts**: Supports 14 different visualization types
-- **Multi-Model Support**: Works with OpenAI, Ollama, and Gemini models
-- **Automated Verification**: Built-in code verification and mathematical accuracy checking
-- **Batch Processing**: Generate multiple visualizations efficiently
+## 🚀 Key Capabilities
 
-## 📦 Installation
+- **LLM-driven code generation:** Uses DSPy signatures (`QuestionAnalysis`, `CodeGeneration`) to prompt an LLM for executable matplotlib/seaborn/plotly code.
+- **Difficulty-aware outputs:** Automatically scales data volume, precision, and visual complexity based on the requested difficulty level.
+- **Multiple image contexts:** Supports charts, tables, geometry diagrams, synthetic scenes, and more via a context-aware library selector.
+- **Ground-truth aware:** Generated programs must compute answers numerically (no language-model guessing) and surface them as dictionaries.
+- **Reproducible pipeline:** Optional seeding keeps DSPy chains deterministic when the backend LLM supports it.
+- **Verifier & executor loop:** (In `coding_agent.py`) validates syntax/mathematical correctness, retries on failure, and executes the generated code to produce image files.
 
-### Prerequisites
-```bash
-# Install Python 3.8+
-python --version
+---
 
-# Install DSPy
-pip install dspy-ai
+## 🏗️ Project Layout
 
-# Install visualization libraries
-pip install matplotlib seaborn pandas numpy sympy plotly pillow
+```
+MORSE-PIC/
+├── coding_agent.py          # Full MathVistaSystem pipeline (generation + verification + execution)
+├── generate_image.py        # Standalone CodingAgent copy; saves raw LLM-generated code to ./generated_code
+├── test_coding_agent.py     # Smoke test for CodingAgent.forward
+├── img/                     # Sample input images
+├── generated_code/          # Auto-created; stores generated scripts & metadata
+├── requirements.txt         # Python dependencies
+└── README.md                # This guide
 ```
 
-### Optional Dependencies
+---
+
+## 🧩 Prerequisites
+
+- **Python** 3.10+ (tested with 3.12)
+- **pip / virtualenv** for dependency management
+- **LLM backend** (choose one):
+	- Google Gemini (`gemini-1.5-flash`, `gemini-2.5-flash`, etc.)
+	- Ollama local models (`qwen3`, `deepseek`, `o1` style models)
+- **API keys / services**
+	- `GEMINI_API_KEY` for Gemini models
+	- Ollama must be running locally (`ollama serve`) if you select that backend
+
+---
+
+## 🔧 Installation
+
 ```bash
-# For advanced 3D visualizations
-pip install pyvista trimesh open3d
-
-# For geographic visualizations
-pip install folium
-
-# For computer vision
-pip install opencv-python
-
-# For Ollama support
-pip install ollama
-```
-
-### Clone Repository
-```bash
-git clone https://github.com/1404mri/MORSE-PIC.git
+git clone <repository-url>
 cd MORSE-PIC
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## 🎯 Quick Start
+Create a `.env` file (or export variables in your shell):
 
-### Basic Usage
-
-```python
-from coding_agent import MathVistaSystem, GenerationInput
-
-# Initialize the system
-system = MathVistaSystem()
-
-# Create input specification
-input_data = GenerationInput(
-    initial_question="What is the area of the triangle?",
-    reference_image_path=None,
-    image_description="A right triangle with sides 3, 4, and 5",
-    difficulty_control="Add angle measurements and multiple triangles",
-    difficulty_level=3,
-    image_context="geometry_diagram"
-)
-
-# Generate visualization
-output = system.generate(input_data)
-
-print(f"Generated Question: {output.question}")
-print(f"Image Path: {output.image_path}")
-print(f"Ground Truth: {output.ground_truth}")
-print(f"Generated Code:\n{output.generated_code}")
+```env
+GEMINI_API_KEY=your-google-gemini-key
+MODEL_TYPE=gemini              # or "ollama"
+MODEL_NAME=gemini-1.5-flash    # or an Ollama model name, e.g. "qwen3:8b"
 ```
 
-### Model Configuration
+> **Tip:** When using Ollama, make sure to pull the model first, e.g. `ollama pull qwen3:8b`.
 
-#### OpenAI (Default)
-```python
-system = MathVistaSystem(model_name="gpt-4")
-```
+---
 
-#### Ollama
-```python
-system = MathVistaSystem()
-system.configure_for_ollama(
-    base_url="http://localhost:11434", 
-    model="codellama"
-)
-```
+## 🧪 Quick Smoke Test
 
-#### Gemini
-```python
-system = MathVistaSystem()
-system.configure_for_gemini(
-    api_key="your-gemini-api-key",
-    model="gemini-pro"
-)
-```
+Run the lightweight unit test to confirm the `CodingAgent` can generate a response:
 
-## 📊 Supported Image Contexts
-
-| Context | Description | Libraries Used |
-|---------|-------------|----------------|
-| `bar_chart` | Bar charts with statistical analysis | matplotlib, seaborn, pandas |
-| `function_plot` | Mathematical function visualizations | matplotlib, numpy, sympy |
-| `geometry_diagram` | Geometric shapes and calculations | matplotlib, numpy |
-| `scatter_plot` | Correlation and regression analysis | matplotlib, seaborn, numpy |
-| `line_plot` | Time series and trend analysis | matplotlib, pandas |
-| `pie_chart` | Categorical data distribution | matplotlib |
-| `violin_plot` | Statistical distribution visualization | seaborn, matplotlib |
-| `table` | Structured data with calculations | pandas, matplotlib |
-| `scientific_figure` | Scientific data visualization | matplotlib, plotly |
-| `abstract_scene` | Abstract mathematical concepts | matplotlib, turtle |
-| `document_image` | Mathematical documents/equations | PIL, matplotlib, sympy |
-| `puzzle_test` | Visual mathematical puzzles | PIL, matplotlib |
-| `synthetic_scene` | 3D synthetic environments | matplotlib, pyvista |
-| `map_chart` | Geographic/spatial visualizations | folium, plotly |
-
-## 🎛️ Difficulty Control
-
-The system supports unlimited difficulty levels with automatic scaling:
-
-- **Level 1-2**: Basic visualizations with simple calculations
-- **Level 3-4**: Intermediate complexity with additional elements
-- **Level 5+**: Advanced features with complex mathematical operations
-
-### Difficulty Parameters
-```python
-# Automatic scaling based on difficulty level
-params = {
-    "num_data_points": 10 + 5 * difficulty,
-    "decimal_places": min(difficulty, 4),
-    "num_categories": min(3 + difficulty, 15),
-    "calculation_steps": difficulty,
-    "visual_elements": min(difficulty * 2, 20)
-}
-```
-
-## 🔧 Advanced Usage
-
-### Batch Processing
-```python
-batch_inputs = [
-    GenerationInput(
-        initial_question="What is the correlation?",
-        image_description="Scatter plot with positive correlation",
-        difficulty_control="Add regression analysis",
-        difficulty_level=4,
-        image_context="scatter_plot"
-    ),
-    GenerationInput(
-        initial_question="Which category is largest?",
-        image_description="Bar chart comparison",
-        difficulty_control="Add percentage labels",
-        difficulty_level=2,
-        image_context="bar_chart"
-    )
-]
-
-results = system.batch_generate(batch_inputs)
-```
-
-### Quality Evaluation
-```python
-quality_scores = system.evaluate_generation_quality(output)
-print(f"Overall Quality: {quality_scores['overall']:.2f}")
-print(f"Code Executability: {quality_scores['code_executability']}")
-print(f"Ground Truth Validity: {quality_scores['ground_truth_validity']}")
-```
-
-### Pipeline Optimization
-```python
-# Optimize DSPy pipeline with training examples
-training_data = [(input1, output1), (input2, output2), ...]
-system.optimize_pipeline(training_data)
-```
-
-## 📋 Input Specification
-
-### GenerationInput Fields
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `initial_question` | str | Base mathematical question |
-| `reference_image_path` | Optional[str] | Path to reference image (can be None) |
-| `image_description` | str | Detailed description of desired image |
-| `difficulty_control` | str | Instructions for adjusting complexity |
-| `difficulty_level` | int | Numerical difficulty (1 to ∞) |
-| `image_context` | str | Type of visualization to generate |
-
-### Example Inputs by Context
-
-#### Geometry Diagram
-```python
-GenerationInput(
-    initial_question="Find the area of the triangle",
-    reference_image_path=None,
-    image_description="Right triangle with labeled sides",
-    difficulty_control="Add angle bisectors and altitude measurements",
-    difficulty_level=5,
-    image_context="geometry_diagram"
-)
-```
-
-#### Function Plot
-```python
-GenerationInput(
-    initial_question="What is the maximum value of the function?",
-    reference_image_path=None,
-    image_description="Quadratic function with vertex form",
-    difficulty_control="Add derivative and critical points analysis",
-    difficulty_level=6,
-    image_context="function_plot"
-)
-```
-
-#### Statistical Visualization
-```python
-GenerationInput(
-    initial_question="What is the correlation coefficient?",
-    reference_image_path=None,
-    image_description="Scatter plot with strong positive correlation",
-    difficulty_control="Add confidence intervals and R-squared value",
-    difficulty_level=4,
-    image_context="scatter_plot"
-)
-```
-
-## 📊 Output Specification
-
-### GenerationOutput Fields
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `question` | str | Adapted question matching the generated image |
-| `image_path` | str | Path to the generated image file |
-| `ground_truth` | str | Programmatically calculated answer |
-| `metadata` | Dict[str, Any] | Generation metadata and parameters |
-| `generated_code` | str | Complete Python code that created the image |
-
-### Example Output
-```python
-output = GenerationOutput(
-    question="What is the area of triangle ABC with sides 5, 12, and 13?",
-    image_path="generated_images/geometry_diagram_3.png",
-    ground_truth="{'area': 30.0, 'perimeter': 30, 'type': 'right_triangle'}",
-    metadata={
-        "difficulty_level": 3,
-        "image_context": "geometry_diagram",
-        "recommended_libraries": ["matplotlib", "numpy"],
-        "verification_result": {...}
-    },
-    generated_code="import matplotlib.pyplot as plt\nimport numpy as np\n..."
-)
-```
-
-## 🔍 System Architecture
-
-### Core Components
-
-1. **CodingAgent**: Main DSPy module for code generation
-2. **VerifierAgent**: Code verification and mathematical accuracy checking
-3. **CodeExecutor**: Safe code execution environment
-4. **LibrarySelector**: Context-aware library recommendation
-5. **DifficultyController**: Automatic complexity scaling
-
-### DSPy Signatures
-
-- **QuestionAnalysis**: Analyzes input questions and requirements
-- **CodeGeneration**: Generates complete Python visualization code
-- **CodeVerification**: Validates generated code quality
-- **MathematicalAccuracy**: Verifies mathematical correctness
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-#### Import Errors
 ```bash
-# Install missing packages
-pip install matplotlib seaborn pandas numpy sympy
+python test_coding_agent.py
 ```
 
-#### DSPy Configuration
+This loads the configured LLM, calls `CodingAgent.forward`, and verifies the structure of the outputs.
+
+---
+
+## 🧠 MathVistaSystem Workflow (`coding_agent.py`)
+
+`MathVistaSystem` orchestrates a full end-to-end generation:
+
+1. **CodingAgent** analyzes the input question, selects libraries, and asks the LLM for Python code.
+2. **VerifierAgent** double-checks syntax and mathematical validity (with DSPy Chain-of-Thought).
+3. **CodeExecutor** installs missing packages, executes the generated code, and collects artifacts
+4. **Outputs** include the adapted question, image path, ground-truth dictionary, metadata, and quality scores.
+
+### Running the pipeline
+
+```bash
+python coding_agent.py
+```
+
+What happens:
+
+- Loads the default Gemini model (`gemini-2.5-flash`) unless overridden via env vars
+- Generates an adapted question & explanation for the sample synthetic scene prompt
+- Saves the rendered plot to `generated_images/`
+- Prints quality metrics and ground-truth values
+
+### Customizing Inputs
+
+Replace the `GenerationInput` block near the bottom of `coding_agent.py` with your own:
+
 ```python
-# Ensure proper model configuration
-import dspy
-dspy.settings.configure(lm=dspy.OpenAI(model="gpt-3.5-turbo"))
+input_data = GenerationInput(
+		initial_question="What is the correlation between study time and score?",
+		reference_image_path=None,
+		image_description="Scatter plot with moderate positive correlation",
+		difficulty_control="Add regression lines and annotate key points",
+		difficulty_level=4,
+		image_context="scatter plot",
+)
 ```
 
-#### Code Execution Failures
-- Check that all required libraries are installed
-- Verify the generated code syntax
-- Ensure output directory exists and is writable
+### Choosing an LLM backend
 
-### Error Handling
-The system includes automatic retry mechanisms:
-- Up to 3 retries for failed code generation
-- Automatic package installation
-- Comprehensive error reporting
+`MathVistaSystem` automatically calls `setup_model(model_type, model_name)` during initialization. Configure via env vars:
 
-## 📈 Performance Tips
+```bash
+export MODEL_TYPE=ollama
+export MODEL_NAME=qwen3:8b
+```
 
-1. **Model Selection**: Use `gpt-4` or `codellama` for better code generation
-2. **Library Installation**: Pre-install all visualization libraries
-3. **Batch Processing**: Use batch generation for multiple items
-4. **Difficulty Scaling**: Start with lower difficulty levels for testing
+Gemini requires `GEMINI_API_KEY`. Ollama ignores the API key but expects the server to be running locally.
 
-## 🤝 Contributing
+### Reproducible Runs
 
-1. Fork the repository
-2. Create a feature branch
-3. Add tests for new functionality
-4. Submit a pull request
+You can provide a `seed` to the constructor to align random libraries and numpy calls. Note that absolute determinism depends on the LLM backend:
 
-## 🙋‍♀️ Support
+```python
+system = MathVistaSystem(model_type="gemini", model_name="gemini-2.5-flash", seed=42)
+```
 
-- Create an issue on GitHub for bugs
-- Check existing issues for common problems
-- Review the troubleshooting section above
+---
 
-## 📚 Examples
+## 🗂️ Standalone Code Exporter (`generate_image.py`)
 
-See the `examples/` directory for:
-- Complete usage examples
-- Different visualization types
-- Advanced configuration options
-- Integration patterns
+Sometimes you just want the raw LLM-generated script without running verifiers or executing it. `generate_image.py`:
 
-## 🔗 Related Work
+- Re-implements the `CodingAgent` logic inline (no imports from `coding_agent.py`)
+- Calls the agent once with a synthetic-scene prompt
+- Extracts the Python code block (ignoring markdown formatting) and writes it to `generated_code/generated_<context>.py`
+- Stores metadata alongside the script in `generated_code/metadata.json`
 
-- [DSPy Framework](https://github.com/stanfordnlp/dspy)
-- [MathVista Dataset](https://mathvista.github.io/)
-- [Mathematical Reasoning with Vision](https://arxiv.org/abs/2310.02255)
+### Usage
+
+```bash
+python generate_image.py
+```
+
+Outputs:
+
+- `generated_code/generated_synthetic_scene.py` – cleaned Python script ready to run
+- `generated_code/metadata.json` – adapted question, libraries, difficulty parameters, and context
+
+Customize the prompt or difficulty by editing the `generation_input` definition near the bottom of the file.
+
+---
+
+## 🧪 Testing & Validation
+
+| Command | Description |
+|---------|-------------|
+| `python test_coding_agent.py` | Basic contract test for `CodingAgent.forward` |
+| `python coding_agent.py` | Full generation + verification + execution pipeline |
+| `python generate_image.py` | Export raw generated code without running it |
+
+> **Note:** The tests rely on a configured LLM. If you only need structure validation without calling the API, consider mocking DSPy in future enhancements.
+
+---
+
+## ⚙️ Configuration Reference
+
+| Variable | Default | Purpose |
+|----------|---------|---------|
+| `GEMINI_API_KEY` | _required for Gemini_ | Auth token for Google Gemini models |
+| `MODEL_TYPE` | `gemini` | Selects LLM provider (`gemini` or `ollama`) |
+| `MODEL_NAME` | `gemini-1.5-flash` | Specific model to load |
+| `OLLAMA_HOST` | `http://localhost:11434` | Override Ollama base URL (set manually if needed) |
+
+Project scripts also install missing Python libs on the fly (e.g., `opencv-python`, `folium`). Ensure your environment permits pip installs.
+
+---
+
+## 🛣️ Roadmap / Ideas
+
+- Cache verified prompts/examples to bootstrap DSPy optimizers faster
+- Expand `LibrarySelector` contexts (heatmaps, 3D plots, maps)
+- Package as a CLI with subcommands (`generate`, `verify`, `batch`)
+- Add integration tests that verify generated images & ground truth against deterministic fixtures
+- Support Azure OpenAI / Anthropic backends via additional `setup_model` branches
+
+Contributions are welcome—open issues or submit pull requests with detailed descriptions.
+
+---
+
+## 📄 License
+
+_Specify your license here (e.g., MIT, Apache 2.0)._
+
+If no license is provided, assume the code is proprietary to the repository owner.
+
+---
+
+## 🙌 Acknowledgements
+
+- Built on top of [DSPy](https://github.com/stanfordnlp/dspy) for structured prompt synthesis
+- Uses Python’s scientific stack (matplotlib, seaborn, pandas, numpy, sympy, etc.) for visualization & computation
+- Inspired by large-scale visual reasoning benchmarks such as MathVista
+
+Enjoy generating math-rich visuals programmatically! 🎨📐

@@ -16,29 +16,3 @@ sympy
 matplotlib
 seaborn
 plotly
-
-# Image processing
-Pillow
-opencv-python
-
-# Statistical libraries
-scikit-learn
-statsmodels
-
-# Jupyter notebook support (optional)
-jupyter
-ipykernel
-ipywidgets
-
-# Development and testing
-pytest
-black
-flake8
-
-# System utilities
-psutil
-tqdm
-
-# Configuration management
-python-dotenv
-pyyaml
