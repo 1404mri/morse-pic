@@ -17,6 +17,8 @@ from typing import Dict, List, Tuple, Any, Optional, Union
 from dataclasses import dataclass
 from enum import Enum
 import warnings
+import dotenv
+dotenv.load_dotenv()
 warnings.filterwarnings('ignore')
 
 
@@ -644,11 +646,13 @@ __all__ = [
 if __name__ == "__main__":
     # Example usage with VLM-based code generation
     system = MathVistaSystem(seed=42)  # Set seed for reproducibility
-    
+    api_key = os.getenv("GOOGLE_API_KEY")
+    if not api_key:
+        raise ValueError("Please set the GOOGLE_API_KEY environment variable for Gemini access.")
     # Configure for different models
     # system.configure_for_ollama(model="codellama")  # For Ollama
-    system.configure_for_gemini(api_key="your-api-key")  # For Gemini
-    
+    system.configure_for_gemini(api_key=api_key)  # For Gemini
+
     # Example input
     input_data = GenerationInput(
         initial_question="What is the area of the triangle?",
