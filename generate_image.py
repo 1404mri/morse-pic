@@ -117,10 +117,10 @@ class DifficultyController:
 
 class QuestionAnalysis(dspy.Signature):
     """Analyze the initial question and determine adaptation requirements"""
-    initial_question = dspy.InputField()
-    difficulty_control = dspy.InputField()
-    difficulty_level = dspy.InputField()
-    image_context = dspy.InputField()
+    initial_question = dspy.InputField("Original mathematical question to base the visualization on")
+    difficulty_control = dspy.InputField("Instructions for modifying difficulty level")
+    difficulty_level = dspy.InputField("Target difficulty level for the question")
+    image_context = dspy.InputField("Context of the image")
     image: dspy.Image = dspy.InputField(desc="Reference image to analyze, if provided")
     
     analysis_result = dspy.OutputField(desc="Detailed analysis of question requirements and adaptation strategy")
